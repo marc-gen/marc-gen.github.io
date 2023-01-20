@@ -1,0 +1,306 @@
+body {
+    background-color: #444;
+  }
+  
+  /*---------- Section accueil-------------- */
+  #conteneur_accueil {
+    width: 700px;
+    height: 622px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    color: aquamarine;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* ajustement du bouton rejouer (section jeu) */
+  }
+  
+  #conteneur_accueil h1 {
+    margin-top: 97px;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+    position: absolute;
+    top: -52px;
+    left: 207px;
+  }
+  
+  #conteneur_accueil .bouton-play {
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 40px;
+    width: 150px;
+    text-align: center;
+    border: 2px solid;
+    color: aquamarine;
+    border-radius: 15px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  #conteneur_accueil .bouton-play span {
+    color: white;
+  }
+  
+  #conteneur_accueil #bouton-accueil {
+    position: absolute;
+    top: 172px;
+    left: 272px;
+  }
+  
+  #conteneur_accueil .bouton-play:hover {
+    background-color: #6d6b6b;
+  }
+  
+  #conteneur_accueil #replay {
+    font-size: 25px;
+    margin-top: 77px;
+    width: 183px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /*---------------------- Section Jeu ----------------------- */
+  .jeu {
+    font-family: 'Akaya Telivigala', cursive;
+    color: aquamarine;
+  }
+  
+  .conteneur-jeu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 177px;
+    left: 196px;
+    /* grille de jeu */
+  }
+  
+  .conteneur-jeu .case {
+    width: 100px;
+    height: 100px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-size: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #fff;
+  }
+  
+  .conteneur-jeu .case:hover {
+    opacity: 50%;
+    background-color: #555;
+    -webkit-box-shadow: 0 0 10px #555;
+    box-shadow: 0 0 10px #555;
+  }
+  
+  .conteneur-jeu .border-bas-droit {
+    border-bottom: 3px aquamarine solid;
+    border-right: 3px aquamarine solid;
+  }
+  
+  .conteneur-jeu .border-bas {
+    border-bottom: 3px aquamarine solid;
+  }
+  
+  .conteneur-jeu .border-right {
+    border-right: 3px aquamarine solid;
+  }
+  
+  /* animation des coups */
+  .coup-enter-active, .coup-leave-active {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  
+  .coup-enter, .coup-leave-to {
+    opacity: 0;
+  }
+  
+  .gagnant {
+    position: absolute;
+    top: 188px;
+    left: 227px;
+    text-align: center;
+    font-size: 35px;
+  }
+  
+  .symbole {
+    position: absolute;
+    top: 120px;
+    left: 300px;
+    font-size: 160px;
+    color: #fff;
+  }
+  
+  /* animation intro */
+  .intro-enter-active, .intro-leave-active {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  
+  .intro-enter, .intro-leave-to {
+    opacity: 0;
+  }
+  
+  .grille_reload-enter-active, .grille_reload-leave-active {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  
+  .grille_reload-enter, .grille_reload-leave-to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  
+  /* animation message de jeu */
+  .gagnant-enter-active, .gagnant-leave-active {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  
+  .gagnant-enter {
+    opacity: 0;
+  }
+  
+  .gagnant-leave-to {
+    opacity: 0;
+  }
+  
+  .conteneur-compte-jeu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  #partie_joueur_1 {
+    width: 171px;
+    height: 92px;
+    font-size: 24px;
+    color: white;
+    margin-right: 100px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    text-align: center;
+    position: absolute;
+    top: 278px;
+    left: -90px;
+  }
+  
+  #partie_joueur_1 p {
+    margin: 0px;
+  }
+  
+  #partie_joueur_1 p span {
+    color: aquamarine;
+  }
+  
+  #partie_joueur_2 {
+    width: 171px;
+    height: 92px;
+    font-size: 24px;
+    color: white;
+    margin-left: 100px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    text-align: center;
+    position: absolute;
+    top: 278px;
+    left: 514px;
+  }
+  
+  #partie_joueur_2 p {
+    margin: 0px;
+  }
+  
+  #partie_joueur_2 p span {
+    color: aquamarine;
+  }
+  
+  .conteneur-remplissage {
+    width: 306px;
+    height: 306px;
+  }
+  
+  #partie_nul {
+    margin-left: 51px;
+  }
+  
+  .joueur_actuel {
+    color: aquamarine;
+  }
+  
+  /* Animation de border-color de la console du gagnant */
+  .joueur_gagne {
+    border-color: #fff;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+    -webkit-animation-name: actif;
+            animation-name: actif;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+  }
+  
+  @-webkit-keyframes actif {
+    0% {
+      border-color: #fff;
+    }
+    50% {
+      border-color: red;
+    }
+    100% {
+      border-color: #fff;
+    }
+  }
+  
+  @keyframes actif {
+    0% {
+      border-color: #fff;
+    }
+    50% {
+      border-color: red;
+    }
+    100% {
+      border-color: #fff;
+    }
+  }
+  
+  /* message de tour X ou O */
+  .message_joueur {
+    font-size: 22px;
+    position: absolute;
+    top: 601px;
+    left: 318px;
+    color: aquamarine;
+  }
+  
+  .message_joueur span {
+    font-size: 26px;
+    color: white;
+  }
+  /*# sourceMappingURL=styles.css.map */

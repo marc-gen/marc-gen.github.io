@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic tac toe - Programmation d'animation web 2 - synthese </title>
+    <link rel="stylesheet" href="css/tictactoe.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">  <!-- vue générale -->
+        <div id="conteneur_accueil">
+            <h1>Tic-Tac-Toe</h1>
+              <!--   Lancer la partie -->
+            <div v-show="jouer == false" @click="lancer_partie" id="bouton-accueil" class="bouton-play">
+                Jouer<span>!</span>
+            </div>
+       
+            <!-- La balise jeu c'est tout le jeu TIC TAC TOE et fonctionnement logique -->
+            <transition name="intro">
+                <jeu v-show="jouer == true" class="jeu"></jeu>
+            </transition>
+           
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/VueComponentExterne.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
