@@ -8,9 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./tic-tac-toe/tictactoe.css">
 
 </head>
 <body>
+  <div class="spacer" ></div>
   <header id="ma_navigation">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -31,7 +33,7 @@
                 Portfolio
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./tictactoe.html">Tic-tac-toe</a></li>
+                <li><a class="dropdown-item" href="tic-tac-toe/tictactoe.html">Tic-tac-toe</a></li>
                 <li><a class="dropdown-item" href="#">Wordpress</a></li>
                 <li><a class="dropdown-item" href="#">Vue.js</a></li>
               </ul>
@@ -57,23 +59,119 @@
       </div>
     </nav>
   </header>
-    <h1>Projets Web</h1>
-    <div><a href="./tictactoe.html">Tic-tac-toe</a></div>
+
+    <div class="container">
+      <h1>Projets Web</h1>
+
+      <!-- v  <div class="tictactoe-live">
+          <div id="app">   vue générale 
+            <div id="conteneur_accueil">
+                <h1>Tic-Tac-Toe</h1>
+                  Lancer la partie 
+                <div v-show="jouer == false" @click="lancer_partie" id="bouton-accueil" class="bouton-play">
+                    Jouer<span>!</span>
+                </div>
+           
+                 La balise jeu c'est tout le jeu TIC TAC TOE et fonctionnement logique 
+                <transition name="intro">
+                    <jeu v-show="jouer == true" class="jeu"></jeu>
+                </transition>
+               
+            </div>
+        </div>
+        </div>-->
+
+        <div class="row row-portfolio">
+           <div class="col">
+            <a href="./tic-tac-toe/tictactoe.html">
+              <div class="card" style="width: 25rem;">
+                <img src="./images/tic-tac-toe.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Projet de jeux <strong>Tic-tac-toe</strong> développé avec le <strong>framework Javascript Vue.js</strong> par CDN(Content Delivery Network)</p>
+                </div>
+              </div>
+            </a>
+ 
+           </div>
+           <div class="col">
+            <div class="card" style="width: 25rem;">
+              <img src="./images/montagne.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+           </div>
+           <div class="col">
+            <div class="card" style="width: 25rem;">
+              <img src="./images/montagne.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+           </div>
+        </div>
+        <div class="row row-portfolio">
+          <div class="col">
+           <div class="card" style="width: 25rem;">
+             <img src="./images/montagne.jpg" class="card-img-top" alt="...">
+             <div class="card-body">
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             </div>
+           </div>
+          </div>
+          <div class="col">
+           <div class="card" style="width: 25rem;">
+             <img src="./images/montagne.jpg" class="card-img-top" alt="...">
+             <div class="card-body">
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             </div>
+           </div>
+          </div>
+          <div class="col">
+           <div class="card" style="width: 25rem;">
+             <img src="./images/montagne.jpg" class="card-img-top" alt="...">
+             <div class="card-body">
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             </div>
+           </div>
+          </div>
+       </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./tic-tac-toe/js/VueComponentExterne.js" type="module"></script>
+<script src="./tic-tac-toe/js/app.js" type="module"></script>
 <style>
+  .tictactoe-live{
+    max-width: 400px;
+    height: 1000px;
+  }
+  .row{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .col a{
+    text-decoration: none;
+  cursor: pointer;
+  color: #24292e;
+  }
+  .col{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #24292e;
+  }
+    h1{
+      margin: 50px 20px;
+    }
   .dropdown-item {
     width: 95%;
 }
     body {
         margin: 0px;
-        height: 100vh;
         font-family: 'Open Sans', sans-serif;
         background-color: #24292e;
         color: #f8bc45;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     .logo{
     width: 85px;
@@ -89,11 +187,15 @@
     left: 0;
     z-index: 1000;
 }
-a{
+header a{
   color: #fff;
   text-decoration: none;
   cursor: pointer;
   margin: 5px;
+}
+.spacer{
+  height: 81px;
+  width: 100%;
 }
 </style>
 
