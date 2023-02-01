@@ -376,4 +376,11 @@ body {
     #conteneur_accueil h1 {
       margin-top: 0px;
   }
+  #partie_nul{
+    text-align: center;
+    margin: 0px auto;
+  }
+  .message_joueur {
+    padding-bottom: 40px;
+}
   }
