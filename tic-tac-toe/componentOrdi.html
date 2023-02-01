@@ -20,17 +20,20 @@
     <div class="conteneur-compte-jeu"> 
 
         <!--------------------------  Console du joueur 1 et 2  -------------------------------------->
-    <joueur1 
+    <div class="conteneur-console">
+        <joueur1 
         :partie_joueur_1="partie_joueur_1" 
         :compteur_joueur_1="compteur_joueur_1" 
         :joueur_gagnant="joueur_gagnant" 
-    />
+        />
 
-    <joueur2 
-        :partie_joueur_2="partie_joueur_2" 
-        :compteur_joueur_2="compteur_joueur_2" 
-        :joueur_gagnant="joueur_gagnant" 
-    />
+        <joueur2 
+            :partie_joueur_2="partie_joueur_2" 
+            :compteur_joueur_2="compteur_joueur_2" 
+            :joueur_gagnant="joueur_gagnant" 
+        />
+    </div>
+
         <div class="conteneur-remplissage">
         <!----------------------------------- LE JEU--------------------------------------------------->
             <transition name="grille_reload">    

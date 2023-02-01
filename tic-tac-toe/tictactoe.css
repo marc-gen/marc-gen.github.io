@@ -74,7 +74,7 @@ body {
   
   #conteneur_accueil #bouton-accueil {
     position: absolute;
-    top: 172px;
+    top: 194px;
     left: 248px;
   }
   
@@ -319,3 +319,61 @@ body {
     color: white;
   }
   /*# sourceMappingURL=styles.css.map */
+
+  /*  MEDIA QUERY   */
+  @media screen and (max-width: 700px){
+    #conteneur_accueil {
+      width: 100%;
+      height: 622px;
+      justify-content: flex-start;
+
+      /* ajustement du bouton rejouer (section jeu) */
+    }
+    #conteneur_accueil #bouton-accueil{
+      margin-bottom: 40px;
+    }
+    #conteneur_accueil h1,
+    #conteneur_accueil #bouton-accueil,
+    #conteneur_accueil .bouton-play
+    {
+      position: static;
+    }
+    .conteneur-jeu{
+      position: static;
+
+    }
+    #partie_joueur_1 {
+      margin-right: 10px;
+      position: static;
+      width: 124px;
+    }#partie_joueur_2 {
+      position: static;
+      width: 124px;
+      margin-left: 10px;
+    }
+    .conteneur-compte-jeu{
+      flex-direction:column-reverse;
+    }
+    .conteneur-console{
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .message_joueur {
+      position: static;
+      text-align: center;
+    }
+    .symbole {
+      position: static;
+      font-size: 39px;
+    }
+    .gagnant{
+      position: static;
+    }
+    #conteneur_accueil #replay {
+      margin-top: -463px;
+    }
+    #conteneur_accueil h1 {
+      margin-top: 0px;
+  }
+  }
