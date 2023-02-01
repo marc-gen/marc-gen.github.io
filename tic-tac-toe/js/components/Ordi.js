@@ -24,7 +24,7 @@ Vue.componentExterne('ordi',{
             compteur_coup: 0,   //savoir si un X ou un O vient d'être joué (utilisation %2)
 
             joueur_ordi: 0, // joueur_ordi = 0 pour ordi avec les O; joueur_odri = 1 pour ordi avec les X 
-            compteur_coup_infini:0,
+            compteur_coup_infini:0,   // utilisé par l'ordi pour savoir quand jouer
             
             tableau_coup: [            // tableau d'enregistrement des coups
                 null, null, null,      // 0 = O, 1 = X
@@ -43,48 +43,9 @@ Vue.componentExterne('ordi',{
     watch: {
         compteur_coup_infini: function () {
           // when the hash prop changes, this function will be fired.
-          if(this.compteur_coup_infini %2 !== 0){
-            //this.compteur_index_coup = 0
-            this.tableau_coup_jouable = []
-            for(let i=0; i<=8;i++){
-                if(this.tableau_coup[i] == null){
-                    this.tableau_coup_jouable.push(i)
-                }             
-            }
-            console.log(this.tableau_coup_jouable)
-            this.coupOrdi = this.tableau_coup_jouable[Math.floor(Math.random()*this.tableau_coup_jouable.length)];
-           /* this.tableau_coup.forEach(pushCoup)
-            function pushCoup(item, index, arr) {
-                if(item !== null){
-                    this.tableau_coup_jouable.push(index)
-                }
-                
-            }*/
-           // for(let i=0, i<=8 , i++)
-        /*    this.tableau_coup.forEach(element => {
-                console.log(element)
-                //savoir quel index du tableau on est
-                if(element == null){ this.tableau_coup_jouable.push() =  this.compteur_index_coup}
-               this.compteur_index_coup +=1
-            });*/
-          } 
-          
-          //test pour faire jouer l'ordi à 8 reste établir liste de coup possible et choisir un aléatoirement et problème de compte de coup pour savoir si c'est l'ordi en fin de match
-          if(this.tableau_coup[this.coupOrdi] == null && this.le_gagnant == null){  //si c'est jouable
-                
-            if(this.compteur_coup %2 == 0){         // si le compteur est pair
-                Vue.set(this.tableau_coup, this.coupOrdi,1) // jouer un X 
-                this.joueur_actuel = 1
-                this.analyseGagnant(this.joueur_actuel) // passé en paramètre pour alléger les conditions 
-            }
-            else{
-                Vue.set(this.tableau_coup, this.coupOrdi,0) // sinon jouer un O 
-                this.joueur_actuel = 0
-                this.analyseGagnant(this.joueur_actuel)
-            }
-            this.compteur_coup +=1
-            this.compteur_coup_infini +=1   
-        }
+        /*  if(this.compteur_coup_infini %2 !== 0){
+            this.OrdiJouerCoup()
+          }*/
         }
      } ,
     methods: {
@@ -101,16 +62,22 @@ Vue.componentExterne('ordi',{
                 
                 if(this.compteur_coup %2 == 0){         // si le compteur est pair
                     Vue.set(this.tableau_coup, id_coup,1) // jouer un X 
-                    this.joueur_actuel = 1
+                    this.joueur_actuel = 1               // doit être 1 = x pour l'analyse, l'affichage se fait à l'envers
+                    this.compteur_coup +=1
                     this.analyseGagnant(this.joueur_actuel) // passé en paramètre pour alléger les conditions 
+                    if(this.joueur_gagnant == null){
+                        this.OrdiJouerCoup()
+                    }
                 }
                 else{
                     Vue.set(this.tableau_coup, id_coup,0) // sinon jouer un O 
                     this.joueur_actuel = 0
+                    this.compteur_coup +=1
                     this.analyseGagnant(this.joueur_actuel)
-                }
-                this.compteur_coup +=1
-                
+                    if(this.joueur_gagnant == null){
+                        this.OrdiJouerCoup()
+                    }
+                }       
             }
         },
 
@@ -196,8 +163,8 @@ Vue.componentExterne('ordi',{
             //-------------section comptage de parties et victoires------//
           
             //----------joueur 1-----------//
-            if((this.le_gagnant == "X" && this.compteur_parties %2 == 0) ||    
-                (this.le_gagnant == "O" && this.compteur_parties %2 != 0)){
+            if((this.le_gagnant == "X" && this.partie_joueur_1 == "X") ||    
+                (this.le_gagnant == "O" && this.partie_joueur_1 == "O")){
                 this.compteur_parties += 1
                 this.compteur_joueur_1 += 1
                 setTimeout(() => {
@@ -207,8 +174,8 @@ Vue.componentExterne('ordi',{
             }
             else{
                 //----------joueur 2-----------//
-                if((this.le_gagnant == "O" && this.compteur_parties %2 == 0 ) || 
-                    (this.le_gagnant == "X" && this.compteur_parties %2 != 0)){
+                if((this.le_gagnant == "X" && this.partie_joueur_2 == "X") ||    
+                    (this.le_gagnant == "O" && this.partie_joueur_2 == "O")){
                     this.compteur_parties += 1
                     this.compteur_joueur_2 += 1
                     setTimeout(() => {
@@ -217,7 +184,7 @@ Vue.componentExterne('ordi',{
                 }
             }
             /* pour les parties nuls */
-            if(this.compteur_coup == 8 && this.le_gagnant == null){
+            if(this.compteur_coup >= 9 && this.le_gagnant == null){
                 setTimeout(() => {
                     this.partie_nul = true
                 }, 500)   
@@ -232,13 +199,12 @@ Vue.componentExterne('ordi',{
                 Vue.set(this.tableau_coup, i, null )
             }     
             /* S'il y a un gagnant, on change le symbole du joueur pour la partie suivante */
-            if(this.le_gagnant != null){
+            if(this.le_gagnant != null || this.partie_nul == true){
                 if(this.partie_joueur_1 == "O"){this.partie_joueur_1 = "X"}
                 else {this.partie_joueur_1 = "O"}
     
                 if(this.partie_joueur_2 == "O"){this.partie_joueur_2 = "X"}
                 else{this.partie_joueur_2 = "O"}
-
 
                 //pour le computer joueur
                 if(this.joueur_ordi == 0){this.joueur_ordi = 1}
@@ -251,8 +217,43 @@ Vue.componentExterne('ordi',{
             this.compteur_coup = 0
             this.partie_nul = false
             this.joueur_gagnant = null
+
+            // jouer le premier coup de l'ordi si il a les x
+            if(this.partie_joueur_2 == "X"){
+                this.OrdiJouerCoup()
+            }
          
     
+        },
+        OrdiJouerCoup: function(){
+            
+            this.tableau_coup_jouable = []
+            for(let i=0; i<=8;i++){
+                if(this.tableau_coup[i] == null){
+                    this.tableau_coup_jouable.push(i)
+                }             
+            }
+            this.coupOrdi = this.tableau_coup_jouable[Math.floor(Math.random()*this.tableau_coup_jouable.length)];
+            //this.coupOrdi = this.AmelioreCoupOrdi(this.tableau_coup_jouable)
+          
+            if(this.tableau_coup[this.coupOrdi] == null && this.le_gagnant == null){  //si c'est jouable
+                if(this.partie_joueur_2 == "O"){
+                    Vue.set(this.tableau_coup, this.coupOrdi,0)
+                    this.compteur_coup +=1
+                    this.compteur_coup_infini +=1  
+                    this.joueur_actuel = 0               // l'affichage se fait à l'envers 
+                    this.analyseGagnant(0)
+   
+                }
+                if(this.partie_joueur_2 == "X"){
+                    Vue.set(this.tableau_coup, this.coupOrdi,1)
+                    this.compteur_coup +=1
+                    this.compteur_coup_infini +=1  
+                    this.joueur_actuel = 1               //  l'affichage se fait à l'envers
+                    this.analyseGagnant(1)
+  
+                }
+            }
         },
      
     },

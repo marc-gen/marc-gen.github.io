@@ -15,11 +15,11 @@
             <h1>Tic-Tac-Toe</h1>
               <!--   Lancer la partie à 2 joueur -->
             <div v-show="jouer == false && computer == false" @click="lancer_partie" id="bouton-accueil" class="bouton-play">
-                Jouer<span>!</span>
+                Jouer à 2<span>!</span>
             </div>
                 <!--   Lancer la partie à 1 joueur contre l'ordi-->
-            <div v-show="jouer == false && computer == false" @click="lancer_partie_computer"  class="bouton-play-computer">
-                Jouer<span>!</span>
+            <div v-show="jouer == false && computer == false" @click="lancer_partie_computer"  class="bouton-play">
+                Jouer seul<span>!</span>
             </div>
             <!-- La balise jeu c'est tout le jeu TIC TAC TOE et fonctionnement logique -->
             <transition name="intro">

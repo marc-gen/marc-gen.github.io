@@ -40,10 +40,25 @@ body {
     left: 207px;
   }
   
+  .bouton-2joueur{
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 40px;
+    width: 200px;
+    text-align: center;
+    border: 2px solid;
+    color: aquamarine;
+    border-radius: 15px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .bouton-2joueur  .bouton-play span {
+    color: white;
+  }
   #conteneur_accueil .bouton-play {
     font-family: 'Akaya Telivigala', cursive;
     font-size: 40px;
-    width: 150px;
+    width: 200px;
     text-align: center;
     border: 2px solid;
     color: aquamarine;
@@ -60,7 +75,7 @@ body {
   #conteneur_accueil #bouton-accueil {
     position: absolute;
     top: 172px;
-    left: 272px;
+    left: 248px;
   }
   
   #conteneur_accueil .bouton-play:hover {

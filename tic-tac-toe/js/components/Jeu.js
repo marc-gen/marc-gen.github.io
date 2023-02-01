@@ -35,10 +35,11 @@ Vue.componentExterne('jeu',{
         // joue le coup dans le tableau selon la case clické
         jouerCoup: function(id_coup){
             if(this.tableau_coup[id_coup] == null && this.le_gagnant == null){  //si c'est jouable
-                
-                if(this.compteur_coup %2 == 0){         // si le compteur est pair
+   
+                if(this.compteur_coup %2 == 0){   
+                    console.log(this.joueur_actuel)      // si le compteur est pair
                     Vue.set(this.tableau_coup, id_coup,1) // jouer un X 
-                    this.joueur_actuel = 1
+                    this.joueur_actuel = 1                  // doit être 1 = x pour l'analyse, l'affichage se fait à l'envers
                     this.analyseGagnant(this.joueur_actuel) // passé en paramètre pour alléger les conditions 
                 }
                 else{
@@ -132,8 +133,8 @@ Vue.componentExterne('jeu',{
             //-------------section comptage de parties et victoires------//
           
             //----------joueur 1-----------//
-            if((this.le_gagnant == "X" && this.compteur_parties %2 == 0) ||    
-                (this.le_gagnant == "O" && this.compteur_parties %2 != 0)){
+            if((this.le_gagnant == "X" && this.partie_joueur_1 == "X") ||    
+                (this.le_gagnant == "O" && this.partie_joueur_1 == "O")){
                 this.compteur_parties += 1
                 this.compteur_joueur_1 += 1
                 setTimeout(() => {
@@ -143,8 +144,8 @@ Vue.componentExterne('jeu',{
             }
             else{
                 //----------joueur 2-----------//
-                if((this.le_gagnant == "O" && this.compteur_parties %2 == 0 ) || 
-                    (this.le_gagnant == "X" && this.compteur_parties %2 != 0)){
+                if((this.le_gagnant == "X" && this.partie_joueur_2 == "X") ||    
+                    (this.le_gagnant == "O" && this.partie_joueur_2 == "O")){
                     this.compteur_parties += 1
                     this.compteur_joueur_2 += 1
                     setTimeout(() => {
@@ -168,7 +169,7 @@ Vue.componentExterne('jeu',{
                 Vue.set(this.tableau_coup, i, null )
             }     
             /* S'il y a un gagnant, on change le symbole du joueur pour la partie suivante */
-            if(this.le_gagnant != null){
+            if(this.le_gagnant != null || this.partie_nul == true){
                 if(this.partie_joueur_1 == "O"){this.partie_joueur_1 = "X"}
                 else {this.partie_joueur_1 = "O"}
     
