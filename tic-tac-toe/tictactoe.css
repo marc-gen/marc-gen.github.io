@@ -1,7 +1,41 @@
 body {
-    background-color: #444;
+    background-color: #444!important;
   }
-  
+  p{
+    line-height: normal;
+  }
+/*header*/
+header{
+  font-family: 'Open Sans', sans-serif;
+}
+.logo{
+width: 85px;
+height: 45px;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+text-decoration: underline;
+}
+#ma_navigation{
+position: fixed;
+top: 0;
+right: 0;
+left: 0;
+z-index: 1000;
+}
+header a{
+color: #fff;
+text-decoration: none;
+cursor: pointer;
+margin: 5px;
+}
+.spacer{
+height: 81px;
+width: 100%;
+}
+.dropdown-item {
+  width: 95%;
+}
+
   /*---------- Section accueil-------------- */
   #conteneur_accueil {
     width: 700px;
@@ -11,7 +45,7 @@ body {
     position: absolute;
     left: 0px;
     right: 0px;
-    top: 0px;
+    top: 92px;
     bottom: 0px;
     color: aquamarine;
     display: -webkit-box;
@@ -156,7 +190,7 @@ body {
   
   .gagnant {
     position: absolute;
-    top: 188px;
+    top: 287px;
     left: 227px;
     text-align: center;
     font-size: 35px;
