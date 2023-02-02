@@ -1,3 +1,4 @@
+/*  CSS BOOTSTRAP MENU ET PAGE GÉNÉRAL      */
 body {
     background-color: #444!important;
   }
@@ -35,7 +36,7 @@ width: 100%;
 .dropdown-item {
   width: 95%;
 }
-
+/*  CSS BOOTSTRAP MENU ET PAGE GÉNÉRAL  FIN     */
   /*---------- Section accueil-------------- */
   #conteneur_accueil {
     width: 700px;

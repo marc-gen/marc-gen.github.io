@@ -1,0 +1,159 @@
+/*  CSS BOOTSTRAP MENU ET PAGE GÉNÉRAL      */
+body {
+    background-color: #444!important;
+  }
+  p{
+    line-height: normal;
+  }
+  .data-meteo-inactive{
+    display: none;
+  }
+  .active{
+    display:inline!important;
+  }
+/*header*/
+header{
+  font-family: 'Open Sans', sans-serif;
+}
+.logo{
+width: 85px;
+height: 45px;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+text-decoration: underline;
+}
+#ma_navigation{
+position: fixed;
+top: 0;
+right: 0;
+left: 0;
+z-index: 1000;
+}
+header a{
+color: #fff;
+text-decoration: none;
+cursor: pointer;
+margin: 5px;
+}
+.spacer{
+height: 81px;
+width: 100%;
+}
+.dropdown-item {
+  width: 95%;
+}
+/*  CSS BOOTSTRAP MENU ET PAGE GÉNÉRAL  FIN     */
+
+
+
+/* du projet de météo TP
+
+    .intro{
+        display: flex;
+    }
+  .degrees{
+    margin-top: 55px;
+    font-size: 35px;
+  }
+    img{
+        width: 175px;
+
+    }
+    /*---- Background ------*/
+    .weather{
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+        height: 100vh;
+        background-color: rgb(35, 87, 146); 
+        color: #fff;
+    }
+   /*  Contenant de l'information avec animation */
+    .info-ville{
+        height: 716px;
+        width: 596px;
+        border: 2px solid #222;
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../graphiques-elements/nuages-infos-animation.jpg);
+        background-position: 100% 265%;
+        animation-name: nuages-anim;
+        animation-duration: 35s;
+        animation-fill-mode: forwards;
+        transition: all ease;
+    }
+
+    @keyframes nuages-anim{
+        0%{
+            background-position: 100% 265%;
+        }
+      
+        100%{
+            background-position: 0% 265%;
+        }
+    }
+
+    /* Titre de la ville avec animation*/
+    span{
+        color: rgb(255, 255, 255);
+        animation-name: anim;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+     @keyframes anim{
+        0%{
+            color: rgb(255, 255, 255);
+        }
+        50%{
+            color: rgb(251, 255, 0);
+        }
+        100%{
+             color: rgb(255, 255, 255);
+        }
+    }
+    .bouton-retour{
+        
+        cursor: pointer;
+        transition: all 0.5s ease;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 8px;
+        margin: 20px;
+        background-color: #fff;
+        color:rgb(61, 110, 167); 
+        height: 18px;
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+    .bouton-retour:hover{
+        background-color: rgb(188, 200, 212); 
+    }
+    p{
+        font-size: 22px;
+    }
+    /* 2 colonnes d'infos */
+    .info-container{
+        display: flex;
+        width: 500px;
+        height: 329px;
+    }
+    .colonne-container{
+        width: 500px;
+    }
+    h2{
+        margin: 0px;
+    }
+    .meteo-data{
+        font-size: 17px;
+    }
+    .description{
+        font-size: 35px;
+        margin: 0px;
+        padding: 0px;
+    }
