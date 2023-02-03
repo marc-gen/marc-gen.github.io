@@ -6,9 +6,10 @@ Vue.componentExterne('joueur1',{
     },
     data: function() {
         return{                    /*  UTILITÉ DES VARIABLES */
-            
+
         }
     },
     template:'componentJoueur1.html'
+    
 })
 

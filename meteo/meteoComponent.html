@@ -1,8 +1,9 @@
 <div class="weather">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
       <div class="info-ville">     
-              <h1><span class=" data-meteo-inactive" :class="{active: dataOk }" >{{maVille}}</span></h1>
+              <h1><span  >{{ma_ville}}</span></h1>
               <h2>Météo</h2>
               <div class="intro">
                    <img :src="icon" :alt="description">
@@ -26,6 +27,6 @@
                       </ul>
                   </div>
               </div>  
-              <div class="bouton-retour" @click="retour">RETOUR À L'ACCUEIL</div>
+
       </div>
   </div>
