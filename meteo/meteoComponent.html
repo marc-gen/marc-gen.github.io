@@ -1,0 +1,31 @@
+<div class="weather">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+      <div class="info-ville">     
+              <h1><span class=" data-meteo-inactive" :class="{active: dataOk }" >{{maVille}}</span></h1>
+              <h2>Météo</h2>
+              <div class="intro">
+                   <img :src="icon" :alt="description">
+                   <p class="degrees" > <strong class=" data-meteo-inactive" :class="{active: dataOk }">{{temp}}</strong>°C</p>
+              </div>
+              <p class="description" > <strong class=" data-meteo-inactive" :class="{active: dataOk }" >{{description}}</strong> </p>
+              <div class="info-container">
+                  <div class="colonne-container">
+                      <ul>
+                          <li><p class="meteo-data" >T. Ressentie: <strong  class=" data-meteo-inactive" :class="{active: dataOk }">{{feels}}°C</strong></p></li>
+                          <li><p class="meteo-data" >Vents: <strong  class=" data-meteo-inactive" :class="{active: dataOk }">{{windSpeed}} Km/h, {{cardPoint}}</strong></p></li>
+                          <li><p class="meteo-data" >Fuseau horaire: <strong class=" data-meteo-inactive" :class="{active: dataOk }" >UTC{{fuseau}}</strong></p></li>
+                      </ul>
+                  </div>
+                  <div class="colonne-container">
+                      <ul>
+                          <li v-if="snow !== '0'" ><p class="meteo-data" >Neige: <strong class=" data-meteo-inactive" :class="{active: dataOk }" >{{snow}} mm</strong></p></li>
+                          <li v-if="rain !== '0'"><p class="meteo-data" >Pluie: <strong  class=" data-meteo-inactive" :class="{active: dataOk }">{{rain}} mm</strong></p></li>
+                          <li><p class="meteo-data" >Lever du soleil: <strong class=" data-meteo-inactive" :class="{active: dataOk }" >{{sunrise}}</strong></p></li>
+                          <li><p class="meteo-data" >Coucher du soleil: <strong class=" data-meteo-inactive" :class="{active: dataOk }" >{{sunset}}</strong></p></li>
+                      </ul>
+                  </div>
+              </div>  
+              <div class="bouton-retour" @click="retour">RETOUR À L'ACCUEIL</div>
+      </div>
+  </div>
