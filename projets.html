@@ -92,18 +92,19 @@
 
                    <!-- ROW --> 
         <div class="row row-portfolio">
-          <h2><img class="wordpress" src="./images/wordpress-white.png" alt="">Projets en Wordpress</h2>
+          <h2><img class="wordpress" src="./images/wordpress-white.png" alt="">Sites en Wordpress</h2>
 
         <!-- col -->
         <div class="col">
-            <a href="./tic-tac-toe/tictactoe.html">
+            <a href="https://www.journallenord.com/">
               <div class="card" style="width: 25rem;">
-                  <img src="./images/tic-tac-toe.png" class="card-img-top" alt="...">                
+                  <img src="./images/journal-le-nord-2.png" class="image-le-nord card-img-top" alt="...">                
                   <div class="voir-plus">
                    <div class="plus">+</div> 
                   </div>
                 <div class="card-body">
-                  <p class="card-text">Projet de jeux <strong>Tic-tac-toe</strong> développé avec le <strong>framework Javascript Vue.js</strong> par CDN(Content Delivery Network)</p>
+                  <p class="card-text">Programmation et intégration des fonctionnalités et du design à partir d'une maquette Web. Développé dans <strong>Wordpress</strong> à <strong>la Petite boite Web.</strong></p>
+                  <p>Thème: <strong>Divi</strong>. Languages: <strong>PHP, Jquery, HTML, CSS.</strong>  </p>
                 </div>
 
                 
@@ -115,12 +116,13 @@
         <div class="col">
           <a href="./meteo/meteo.html">
             <div class="card" style="width: 25rem;">
-                <img src="./images/meteo.png" class="card-img-top" alt="...">                
+                <img src="./images/rampe-de-patio-2.png" class="card-img-top image-le-nord" alt="...">                
                 <div class="voir-plus">
                  <div class="plus">+</div> 
                 </div>
               <div class="card-body">
-                <p class="card-text">Projet d'application front-end d'une page <strong>Météo</strong> développé avec le <strong>framework Javascript Vue.js</strong> par CDN(Content Delivery Network)</p>
+                <p class="card-text">Intégration de la page "rampe de patio" pour <strong>Patio du nord.</strong> fait dans<strong> Wordpress avec le builder Tatsu.</strong></p>
+                <p>Création d'icônes et ajustements d'images dans <strong>Illustrator</strong> et <strong><strong>Photoshop.</strong></p>
               </div>
 
               
@@ -143,6 +145,9 @@
 
 
 <style>
+  .image-le-nord{
+    object-position: 0px 0px!important;
+  }
   .wordpress{
     width: 90px;
   }
@@ -284,6 +289,7 @@ html, body {
   @media screen and (max-width: 500px) {
     .row-portfolio .card{
       width: 18rem!important;
+      height: 279px!important;
     }
     h2{
       font-size: 18px;
@@ -297,6 +303,12 @@ html, body {
     margin-right: 13px;
   }
 }
+@media screen and (min-width: 500px){
+  .row-portfolio .card{
+      height: 387px!important;
+    }
+}
+
 
   /* *********************** MEDIA QUERY FIN *********************/
 </style>
