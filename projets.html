@@ -32,8 +32,10 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="tic-tac-toe/tictactoe.html">Tic-tac-toe</a></li>
-                <li><a class="dropdown-item" href="#">Wordpress</a></li>
-                <li><a class="dropdown-item" href="#">Vue.js</a></li>
+                <li><a class="dropdown-item" href="./meteo/meteo.html">Météo</a></li>
+                <li><a class="dropdown-item" href="https://www.journallenord.com/">Journal Le Nord</a></li>
+                <li><a class="dropdown-item" href="https://patiodunord.com/rampes-de-patio/">Intégration: Patio du nord</a></li>
+                <li><a class="dropdown-item" href="https://goudronslaurentiens.com/installation-de-membrane-de-fondation/">Intégration: Goudrons Laurentiens</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -51,7 +53,7 @@
 
          <!-- ROW --> 
         <div class="row row-portfolio">
-              <h2><img src="./images/vue.png" alt="">Framework Javascript Vue.js</h2>
+              <h2 class="h2-vue" ><img src="./images/vue.png" alt="">Framework Javascript Vue.js</h2>
 
             <!-- col -->
             <div class="col">
@@ -92,7 +94,7 @@
 
                    <!-- ROW --> 
         <div class="row row-portfolio">
-          <h2><img class="wordpress" src="./images/wordpress-white.png" alt="">Sites en Wordpress</h2>
+          <h2 class="h2-wordpress" ><img class="wordpress" src="./images/wordpress-white.png" alt="">Sites en Wordpress</h2>
 
         <!-- col -->
         <div class="col">
@@ -121,8 +123,26 @@
                  <div class="plus">+</div> 
                 </div>
               <div class="card-body">
-                <p class="card-text">Intégration de la page "rampe de patio" pour <strong>Patio du nord.</strong> fait dans<strong> Wordpress avec le builder Tatsu.</strong></p>
-                <p>Création d'icônes et ajustements d'images dans <strong>Illustrator</strong> et <strong><strong>Photoshop.</strong></p>
+                <p class="card-text">Intégration de la page "Rampe de patio" pour <strong>Patio du nord.</strong> fait dans<strong> Wordpress</strong> avec le <strong>Tatsu</strong> builder.</p>
+                <p>Création d'icônes et ajustements d'images dans <strong>Illustrator</strong> et <strong>Photoshop.</strong></p>
+              </div>
+
+              
+            </div>
+          </a>
+      </div>
+ <!--fin col -->
+         <!-- col -->
+         <div class="col">
+          <a href="https://goudronslaurentiens.com/installation-de-membrane-de-fondation/">
+            <div class="card" style="width: 25rem;">
+                <img src="./images/goudron-laurentiens.png" class="card-img-top image-le-nord" alt="...">                
+                <div class="voir-plus">
+                 <div class="plus">+</div> 
+                </div>
+              <div class="card-body">
+                <p class="card-text">Intégration de 3 pages de services pour <strong>Goudrons Laurentiens</strong>. fait dans<strong> Wordpress</strong> avec le <strong>thème Divi.</strong></p>
+                <p>Création d'icônes et ajustements d'images dans <strong>Illustrator</strong> et <strong>Photoshop.</strong></p>
               </div>
 
               
@@ -132,12 +152,44 @@
  <!--fin col -->
        
       </div> <!-- fin row -->
+                   <!-- ROW --> 
+        <div class="row row-portfolio">
+          <h2><img class="laravel" src="./images/laravel.svg.png" alt="">Projets Laravel</h2>
+
+        <!-- col -->
+        <div class="col">
+          <h3 class="avenir">À venir!</h3>
+
+        </div>
+        <!-- col -->
+      </div> <!-- fin row -->
 
 
       </div> <!-- fin app -->
 
 
     </div>
+
+    <!------------------  Contact   ----------------------> 
+  <div class="contact-container">
+    <div id="contact-title">
+      <h2 >Contact</h2>
+      <div class="row contact-row">
+        <div class="col">
+          <p class="mail-p" ><a href="mailto:marc_gen@hotmail.com"><img class="mail-icon" src="./images/mail.png" alt=""></a></p>
+        </div>
+        <div class="col">
+          <p class="tel"><a href="tel:14383762207"><img class="phone-icon" src="./images/phone.png" alt=""></a></p>
+        </div>
+      </div>
+    </div>
+    <div id="contact-anchor" class="contact"></div>
+</div>
+</body>
+<footer>
+<a class="raw-pixel" href="https://www.rawpixel.com/">Image by rawpixel.com</a> 
+<p class="copy-right ">Copyright © 2023</p>
+</footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -145,8 +197,101 @@
 
 
 <style>
+.copy-right{
+  color: #fff;
+  position:relative;
+  left :5px;
+  display: inline;
+  text-align: center;
+  font-size: 9px;
+}
+  .laravel{
+    padding-left: 14px!important;
+  }
+  .row-portfolio h2{
+    padding-left: 0px;
+  }
+  .h2-vue{
+    padding-left: 14px!important;
+  }
+  .contact-container h2{
+    padding-left: 0px!important;
+    left: 0px!important;
+  }
+    .contact{
+    position: relative;
+    height: 324px;
+    background-color: #1a2b34;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./images/code.png");
+    opacity: 0.16;
+    filter: contrast(1.5);
+  }
+    .mail-icon, .phone-icon{
+    transition: all 0.3s;
+    opacity: 0.8;
+  }
+  .mail-icon:hover, .phone-icon:hover{
+    background-color: #f8bc45;
+  }
+  .mail-icon{
+    width: 75px;
+    background-color: #fff;
+    border-radius: 23px;
+    padding: 3px;
+ 
+  }
+  .phone-icon{
+    width: 75px;
+    background-color: #fff;
+    border-radius: 23px;
+    padding: 3px;
+  }
+    .tel{
+      color: #fff;
+    text-align: left;
+    margin-top: 35px;
+    margin-left: 70px;
+  }
+  .raw-pixel{
+    color: #fff;
+    position: relative;
+    left: 5px;
+    font-size: 9px;
+    text-decoration: none;
+  }
+    .mail-p{
+    text-align: right;
+    margin-top: 35px;
+    margin-right: 70px;
+  }
+    #contact-title{
+    position: absolute;
+    margin: 0px auto;
+    left: 0px;
+    right: 0px;
+    text-align: center!important;
+    /* margin-top: 20px!important; */
+    color: #f8bc45;
+    /*background-color: #1a2b34;*/
+    z-index: 3;
+    top: 40px;
+  }
+      .contact-container{
+      position: relative;
+    }
+  .avenir{
+    color: #f8bc45;
+    margin-left: 30px;
+  }
   .image-le-nord{
     object-position: 0px 0px!important;
+  }
+  .laravel{
+    width: 78px;
   }
   .wordpress{
     width: 90px;
@@ -232,7 +377,7 @@
     height: 1000px;
   }
   .row{
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
   }
   .col a{
