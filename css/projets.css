@@ -313,6 +313,9 @@ position: relative;
     left: 11px;
     z-index: 1000;
   }
+  .col-porfolio{
+    max-width: 440px;
+  }
     /* *********************** MEDIA QUERY  *********************/
     @media screen and (max-width: 500px) {
       .row-portfolio .card{
@@ -369,6 +372,12 @@ position: relative;
   @media screen and (min-width: 500px){
     .row-portfolio .card{
         height: 387px!important;
+      }
+  }
+  @media screen and (min-width: 1300px){
+    .container{
+        padding-left: 115px;
+        padding-right: 115px;
       }
   }
   
