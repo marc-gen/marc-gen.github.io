@@ -212,7 +212,7 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("./images/code.png");
+  background-image: url("../images/code.png");
   opacity: 0.16;
   filter: contrast(1.5);
 }
@@ -351,7 +351,7 @@ background-attachment: fixed;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-background-image: url("./images/code.png");
+background-image: url("../images/code.png");
 opacity: 0.16;
 }
 body {
