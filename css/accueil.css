@@ -203,6 +203,7 @@ html, body, .container,.experience-container-footer {
   margin-top: 30px;
   color: #fff;
   font-size: 20px;
+  overflow-y: hidden;
 }
 .dropdown-item {
     width: 95%;
@@ -230,6 +231,7 @@ width: 1090px;
 top: -163px;
 transition: all 4s ease;
 }
+
 .section-presentation-skill{
 position: relative;
 
@@ -434,6 +436,9 @@ margin: 5px;
 
 /***************************MEDIA QUERY  *******************/
 @media screen and (max-width: 992px) {
+  .presentation{
+  padding: 20px;
+  }
     .experience-container{
       padding-left: 30px;
       padding-right: 30px;
