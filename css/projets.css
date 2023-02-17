@@ -316,6 +316,9 @@ position: relative;
   .col-porfolio{
     max-width: 440px;
   }
+  #contact-title h2{
+    color: #f8bc45!important;
+  }
     /* *********************** MEDIA QUERY  *********************/
     @media screen and (max-width: 500px) {
       .row-portfolio .card{
