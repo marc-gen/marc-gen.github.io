@@ -226,9 +226,9 @@ html, body, .container,.experience-container-footer {
 .mokup-about{
 position: absolute;
 /*right: 690px;*/
-right:50%;
-width: 1090px;
-top: -163px;
+right: 53%;
+width: 866px;
+top: 20px;
 transition: all 4s ease;
 }
 
