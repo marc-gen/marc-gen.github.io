@@ -542,6 +542,9 @@ margin-bottom: 5px;
 }
 
 @media screen and (min-width: 1300px){
+  .presentation{
+    max-width: 800px;
+  }
   #about{
     padding-top: 50px;
     padding-bottom: 60px;
@@ -575,5 +578,7 @@ margin-bottom: 5px;
   h2{
     font-size: 41px;
   }
-
+  .ordi-dessin-anim {
+    right: 400px;
+}
 }
