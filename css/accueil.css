@@ -204,6 +204,7 @@ html, body, .container,.experience-container-footer {
   color: #fff;
   font-size: 20px;
   overflow-y: hidden;
+  min-height: 558px;
 }
 .dropdown-item {
     width: 95%;
@@ -264,7 +265,7 @@ top: 80px;
   padding-top:20px;
   width: 100%;
   background-color: #182025;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 #about h2{
  /* text-align: center!important;*/
