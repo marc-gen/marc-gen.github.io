@@ -542,6 +542,14 @@ margin-bottom: 5px;
 }
 
 @media screen and (min-width: 1300px){
+  #about{
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .experience-container {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
   .container{
       padding-left: 115px;
       padding-right: 115px;
@@ -563,4 +571,9 @@ margin-bottom: 5px;
 .footer .raw-pixel{
   color: #fff;
 }
+@media screen and (min-width: 1800px){
+  h2{
+    font-size: 41px;
+  }
 
+}
