@@ -13,9 +13,31 @@ header{
 width: 85px;
 height: 45px;
 }
-.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
-text-decoration: underline;
+.nav-item,.nav-link{
+  position: relative;
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  margin-left: 10px;
+  margin-right: 10px;
 }
+.nav-link::after{
+  width: 0%;
+  height: 2px;
+  content: "";
+  background-color: #f8bc45;
+  transition: width .2s ease;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+
+}
+.nav-link:hover.nav-link::after{
+  width: 100%!important;
+}
+.active.nav-link::after{
+  width: 100%!important;
+}
+
 #ma_navigation{
 position: fixed;
 top: 0;
@@ -418,4 +440,25 @@ width: 100%;
   .message_joueur {
     padding-bottom: 40px;
 }
+  }
+
+  @media screen and (max-width: 992px) {
+    .nav-link::after {
+      height: 2px;
+      content: "";
+      background-color: #f8bc45;
+      transition: width .2s ease;
+      position: absolute;
+      bottom: 20px;
+      left: -21px;
+      transform: rotate(90deg);
+      width: 0px;
+  }
+  .active.nav-link::after{
+    width: 27px!important;
+  }
+  .nav-link:hover.nav-link::after{
+    width: 27px!important;
+  }
+
   }

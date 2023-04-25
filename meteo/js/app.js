@@ -11,11 +11,9 @@ import './components/meteoComponent.js'
         re_render: function(){
             this.une_ville = this.prochaine_ville;
             this.renderKey += 1;
-            console.log(this.renderKey)
         },
         interval_re_render: function(){
             this.renderKey += 1;
-            console.log(this.renderKey)
         },
       /*  changer_ville: function(){  
             this.une_ville = this.prochaine_ville;

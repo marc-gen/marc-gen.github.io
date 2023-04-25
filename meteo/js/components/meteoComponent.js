@@ -105,7 +105,6 @@ Vue.componentExterne('meteocomponent',{
      //   this.getMeteo(this.maVille)
     },
     mounted(){
-       console.log(this.newville)
        this.getMeteo(this.newville)
     },
     template:'meteoComponent.html'
