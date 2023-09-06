@@ -58,6 +58,7 @@ position: relative;
     .contact-container h2{
       padding-left: 0px!important;
       left: 0px!important;
+      
     }
     .contact-container {
       background-color: #14181d7a;
@@ -353,7 +354,7 @@ background-image: linear-gradient(225deg, #182025  30%, rgb(113, 95, 61) 100%);
         height: 279px!important;
       }
       h2{
-        font-size: 18px;
+        font-size: 26px;
       }
       .row-portfolio .card img {
        left: 0.3px;
