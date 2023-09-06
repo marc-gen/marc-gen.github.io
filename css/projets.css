@@ -1,3 +1,6 @@
+body{
+  user-select: none!important; 
+}
 .navbar a, .navbar .active {
   color: #f9f6ee!important;
 }

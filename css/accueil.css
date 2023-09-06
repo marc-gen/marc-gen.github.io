@@ -1,3 +1,7 @@
+body{
+  user-select: none!important; 
+ /* overflow: hidden; */
+}
 .navbar-toggler-icon{
     color: #f9f6ee;
 }
