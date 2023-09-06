@@ -9,7 +9,7 @@
   background-color: rgba(20,24,29,0.7)!important;
 }
 @media only screen and (max-width: 500px) {
-  #ma_navigation{
+  #ma_navigation .navbar-nav{
     background-color: rgba(20,24,29,0.7)!important;
   }
 }
