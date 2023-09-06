@@ -43,3 +43,13 @@ document.addEventListener("DOMContentLoaded", function(){
     observer_3.observe(anchor_skill_anim)
 
 });
+
+//   section menu on scroll
+$(window).scroll(function() {
+  if ($(window).scrollTop() <= 100) {
+    $(".navbar").removeClass( "menu-scroll-bg" );
+  }
+  if ($(window).scrollTop() > 100) {
+    $(".navbar").addClass( "menu-scroll-bg" );
+  }
+});

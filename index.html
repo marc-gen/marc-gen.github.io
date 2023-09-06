@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="./css/accueil.css" /> 
     <link rel="stylesheet" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
 
   <header id="ma_navigation">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img  class="logo" src="./images/logo-marc.svg" alt=""></a>
+        <a class="navbar-brand" href="#"><img  class="logo" src="./graphiques-elements/logo-blanc.svg" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,6 +27,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#anchor-about">À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#anchor-experience">Expérience</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./projets.html">Portfolio</a>
@@ -40,11 +44,11 @@
   </header>
   <!--------------  bannière   -------------------------> 
 
-    <section></section>
+     <section></section>
       <div class="over-section">
           <div class="texte-intro">
               <div class="image-conteneur">
-                <img src="./images/marc-photo.png" alt="">
+                <!--     <img src="./images/pirate.jpg" alt=""> -->
               </div>
               <div class="info-conteneur">
                 <h1>Marc Généreux</h1>
@@ -163,9 +167,9 @@
       </div>
 
     </div>
-  <!------------------  Contact   ----------------------> 
+  <!------------------  Expérience web   ----------------------> 
 
-  <div class="container  experience-container">
+  <div class="container  experience-container" id="anchor-experience">
       <h2>Expérience Web</h2>
       <div class="row">
         <h3>Formation</h3>
@@ -222,18 +226,23 @@
             <p class="tel"><a href="tel:14383762207"><img class="phone-icon" src="./images/phone.png" alt=""></a></p>
           </div>
         </div>
+        <div class="copyright">
+          <a class="raw-pixel" href="https://www.rawpixel.com/">Image by rawpixel.com</a> 
+          <p class="copy-right ">Copyright © 2023</p>
+        </div>
+
       </div>
       <div id="contact-anchor" class="contact"></div>
   </div>
   </body>
   
-  <div class="container  experience-container-footer">
+ <!----------------- <div class="container  experience-container-footer">
         <div class="footer">
             <a class="raw-pixel" href="https://www.rawpixel.com/">Image by rawpixel.com</a> 
             <p class="copy-right ">Copyright © 2023</p>
         </div>
 
-    </div>
+    </div>------> 
  
 
 
