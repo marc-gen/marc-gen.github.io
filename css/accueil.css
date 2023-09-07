@@ -1,7 +1,3 @@
-body{
-  user-select: none!important; 
- /* overflow: hidden; */
-}
 .navbar-toggler-icon{
     color: #f9f6ee;
 }
@@ -13,7 +9,7 @@ body{
   background-color: rgba(20,24,29,0.7)!important;
 }
 @media only screen and (max-width: 500px) {
-  #ma_navigation /*.navbar-nav   enleverbande*/{
+  #ma_navigation{
     background-color: rgba(20,24,29,0.7)!important;
   }
 }
@@ -179,6 +175,15 @@ font-size: 9px;
   right: -500px;
   transition: all 1s ease-out;
   transition-delay: 0.75s;
+  animation-name: ordi-anim;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  opacity: 100%;
+}
+@keyframes ordi-anim {
+  0%   {opacity: 100%;}
+  85%  {opacity: 20%;}
+  100% {opacity: 100%;}
 }
 #anchor-about{
   position: absolute;
@@ -236,6 +241,7 @@ html, body, .container,.experience-container-footer {
   .contact-container{
     position: relative;
   }
+
 .contact{
   position: relative;
   height: 250px;
@@ -246,8 +252,12 @@ html, body, .container,.experience-container-footer {
   background-size: cover;
   /*background-image: url("../images/code.png");*/
   background-image: linear-gradient(160deg, #182025 0%, rgba(248,188,69,1) 100%);
-  opacity: 0.16;
+  opacity: 0.35;
   filter: contrast(1.5);
+  transition: all 0.3s linear;
+}
+.contact:hover .phone-icon{
+  opacity: 0.45;
 }
 .mokup-about{
 position: absolute;
@@ -411,18 +421,18 @@ background-repeat: no-repeat;
 background-size: cover;
 background-color: #f8bc45;;
 animation-name: bg-banner-anim;
-animation-duration: 2s;
-animation-iteration-count: 1;
+animation-duration: 2.5s;
+animation-iteration-count:1;
 /*transition: all 1s ease;*/
 background-image: linear-gradient(160deg, #182025 0%, rgba(248,188,69,0.65) 100%);
 /*background-image: url("../images/code.png");*/
-opacity: 0.16;
+opacity: 0.35;
 }
 
 @keyframes bg-banner-anim {
-  0%   {background-color: #f8bc45;}
-  50%  {background-color: #182025;}
-  100% {background-color: #ffaa00}
+  0%   {opacity: 0.35;}
+  85%  {opacity: 0.2;}
+  100% {opacity: 0.35;}
 }
 /*
 @keyframes bg-banner-anim {
@@ -577,6 +587,7 @@ margin-bottom: 5px;
 .info-conteneur h2{
   font-size: 21px;
 }
+
 .mail-p{
   margin-right: 30px;
 }
@@ -635,4 +646,18 @@ margin-bottom: 5px;
   .ordi-dessin-anim {
     right: 400px;
 }
+}
+
+
+#titre-job{
+  color:#f8bc45;
+  animation-name: titre-anim;
+  animation-fill-mode: forwards;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+}
+@keyframes titre-anim{
+  0%   {color: #2c1f05;}
+  85%  {color: #2c1f05;}
+  100% {color:#f8bc45;}
 }
