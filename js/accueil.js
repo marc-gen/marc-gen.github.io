@@ -1,5 +1,23 @@
 
+// mouse follower
 
+var $mouseX = 0, $mouseY = 0;
+var $xp = 0, $yp =0;
+
+$(document).mousemove(function(e){
+    $mouseX = e.pageX;
+    $mouseY = e.pageY;    
+});
+
+var $loop = setInterval(function(){
+// change 12 to alter damping higher is slower
+$xp += (($mouseX - $xp)/1);
+$yp += (($mouseY - $yp)/1);
+$("#follower").css({left:$xp +'px', top:$yp +'px'});  
+}, 30);
+  
+  
+  
   //  image d'ordinateur à faire apparaître lorsque l'élément est visible      
   //  ici ordi orange et big ordi
 
@@ -59,14 +77,26 @@ $(document).ready(function() {
     }
   });
 
-  //background contact on hover icon
+  //background contact on hover icon and remove the glitch of follwing mouse on over button
   $(".phone-icon, .mail-icon").each(function(){
-      $(this).hover(function(){$(".contact").css("opacity", "40%");}, function(){
+      $(this).hover(function(){$(".contact").css("opacity", "40%");
+                                $("#follower").css({display:'none'});       
+                              }, function(){
         $(".contact").css("opacity", "35%");
+        $("#follower").css({display:'block'}); 
       })
   })
+    //background contact on hover icon and remove the glitch of follwing mouse on over button
+    $("#anchor-experience").hover(function(){
+                                $("#follower").css({display:'none'});       
+                              }, function(){
 
-
+        $("#follower").css({display:'block'}); 
+      })
+  
 })
+
+
+
 
 

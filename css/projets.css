@@ -1,3 +1,14 @@
+#follower{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 100%;
+  background-color:rgba(248,188,69,0.3);
+  box-shadow: 0 0 40px 40px rgba(248,188,69,0.1);
+  top: 49%;
+  left: 48.85%;
+  z-index: 1000;
+}
 body{
   user-select: none!important; 
 }
