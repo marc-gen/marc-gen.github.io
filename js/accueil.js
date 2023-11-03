@@ -1,5 +1,5 @@
 
-// mouse follower
+//---------------------------------------------- mouse follower-------------------------------
 
 var $mouseX = 0, $mouseY = 0;
 var $xp = 0, $yp =0;
@@ -15,7 +15,7 @@ $xp += (($mouseX - $xp)/1);
 $yp += (($mouseY - $yp)/1);
 $("#follower").css({left:$xp +'px', top:$yp +'px'});  
 }, 30);
-  
+//-------------------------------------------------------------------------------------------- 
   
   
   //  image d'ordinateur à faire apparaître lorsque l'élément est visible      
@@ -62,10 +62,20 @@ $("#follower").css({left:$xp +'px', top:$yp +'px'});
       )
       observer_3.observe(anchor_skill_anim)
 
+    //----------------------------- RANDOM COLOR des banner-2 --------------------------------(255-200)+200-----------//
+    var banner_top = document.querySelector('.banner-2'); 
+    var banner_exp = document.querySelector('.experience-container');
+    var diviseur_about = document.querySelector('.xp-like-bg'); 
+    setInterval(function() {banner_top.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 255)/*.toString(16)*/ + "," + Math.floor(Math.random() * 255)+"," + Math.floor(Math.random() * 255)+")";}, 10000);
+    setInterval(function() {
+       let random_color_bg_xp = "rgb(" + Math.floor(Math.random() * (255-200)+200)/*.toString(16)*/ + "," + Math.floor(Math.random() * (255-200)+200)+"," + Math.floor(Math.random() * (255-200)+200)+")";
+       banner_exp.style.backgroundColor = random_color_bg_xp
+       diviseur_about.style.backgroundColor = random_color_bg_xp
+    }, 10000);
   });
 
   
-  //   JQUERY  //
+  //--------------------------   JQUERY MENU ON SCROLL ------------------------------------ //
 $(document).ready(function() {
   //   section menu on scroll
   $(window).scroll(function() {
@@ -77,7 +87,7 @@ $(document).ready(function() {
     }
   });
 
-  //background contact on hover icon and remove the glitch of follwing mouse on over button
+  //------background contact on hover icon and remove the glitch of follwing mouse on over button----//
   $(".phone-icon, .mail-icon").each(function(){
       $(this).hover(function(){$(".contact").css("opacity", "40%");
                                 $("#follower").css({display:'none'});       
@@ -95,6 +105,47 @@ $(document).ready(function() {
       })
   
 })
+
+//------------- Megamenu appear and disapear when hover on portfolio or the megamenu -------------------//
+$(document).ready(function() {
+  $(".portfolio").hover(function(){     
+                        $(".megamenu").addClass( "mega-menu-visible" );
+                      },
+  )
+  $(".remove-megamenu").each(function(){
+    $( this ).hover(function(){
+      $(".megamenu").removeClass( "mega-menu-visible" );
+    })
+  })
+
+
+
+  // -----------------      Arrow dropdown--------------------------------------------/
+  var arrow = $(".img-arrow-dropdown");
+  var dropdown = $(".dropdown-menu");
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+    /*  var attributeValue = $(mutation.target).prop(mutation.attributeName);  = show ou  dropdown-menu show   */
+     arrow.toggleClass("rotation-down")
+    /*POUR AVOIR MEGAMENU LIER AU DROPDOWN  $(".megamenu").toggleClass( "mega-menu-visible" );*/
+    });
+  });
+  
+  observer.observe(dropdown[0], {
+    attributes: true,
+    attributeFilter: ['class']
+  });
+  
+  //-----------------------------------------------------------------------------------//
+
+})
+
+
+
+
+
+
+
 
 
 

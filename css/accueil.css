@@ -1,10 +1,81 @@
+.diviseur-courbe{
+  position: relative;
+  background-image: url(../graphiques-elements/diviseur-section-slim.svg);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+
+
+}
+.xp-like-bg{
+  transition: all 0.25s ease;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  animation-name: bg-banner-anim-2;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  /* background-color: #ffffff; */
+  background-image: linear-gradient(160deg, #3a4a53 0%, rgba(192, 192, 211, 0.65) 100%);
+}
+
+.navbar-brand{
+  position: relative;
+}
+
+.boule-titre{
+  position: absolute;
+  bottom: 24px;
+  left: 9px;
+  width: 1px;
+  height: 1px;
+  border-radius: 100%;
+  background-color: rgba(248,188,69,0.3);
+  box-shadow: 0 0 40px 40px rgba(248,188,69,0.2);
+}
+#about-title{
+  position: relative;
+}
+ul.dropdown-menu.show{
+  background-color: #2a261c!important;
+}
+a.dropdown-item:hover{
+  background-color: #353127 !important;
+}
+.inline{
+  position: relative;
+  display: inline!important;
+  top: 13px;
+  left: 2px;
+
+}
+.arrow-dropdown{
+  margin: 0px!important;
+}
+.img-arrow-dropdown{
+  width: 9px;
+  height: 9px;
+  transform: rotate(90deg);
+  transition: all 0.35s ease;
+  position: relative;
+  right: 8px;
+}
+.rotation-down{
+  transform: rotate(270deg);
+}
+
 #follower{
   position: absolute;
   width: 1px;
   height: 1px;
   border-radius: 100%;
   background-color:rgba(248,188,69,0.3);
-  box-shadow: 0 0 40px 40px rgba(248,188,69,0.1);
+  box-shadow: 0 0 40px 40px rgba(248,188,69,0.2);
   top: 49%;
   left: 48.85%;
   z-index: 10000;
@@ -93,12 +164,7 @@ overflow-x: hidden;
   color: #f8bc45;
 }
 
-.experience-container{
-  background-color: #ffffff;
-  color: #1a2b34;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
+
 .experience-container h2{
   text-align: center;
 }
@@ -285,7 +351,8 @@ transition: all 4s ease;
 
 .section-presentation-skill{
 position: relative;
-
+padding-top: 42px;
+padding-bottom: 30px;
 }/*
 .code-bg{
 position: fixed;
@@ -354,6 +421,9 @@ top: 80px;
   margin-left: 10px;
   margin-right: 10px;
 }
+.dropdown-toggle::after{
+  display: none!important;
+}
 .nav-link::after{
   width: 0%;
   height: 2px;
@@ -392,6 +462,40 @@ margin-right: 20px;
   top: 0;
   bottom: 0px;
 }
+.megamenu{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 100vh;
+  max-height: 760px;
+  background-color: #14181d;
+  display: none;
+  opacity: 0;
+  transition:all 5s ease;
+}
+.mega-menu-visible{
+  transition: all 5s ease;
+  display: block;
+  opacity: 1;
+}
+.container-megamenu{
+  position: relative;
+  top: 100px;
+
+ 
+}
+.row-megamenu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .over-section{
   position: absolute;
   display: flex;
@@ -416,7 +520,8 @@ max-height: 760px;
 .texte-intro h1{
   color: #f5f0e2;
 }
-section{
+.banner-1{
+  position: relative;
 filter: contrast(1.5);
 height: 100vh;
 max-height: 760px;
@@ -434,7 +539,7 @@ background-attachment: fixed;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-background-color: #f8bc45;;
+background-color: #f8bc45;
 animation-name: bg-banner-anim;
 animation-duration: 2.5s;
 animation-iteration-count:1;
@@ -443,11 +548,69 @@ background-image: linear-gradient(160deg, #182025 0%, rgba(248,188,69,0.65) 100%
 /*background-image: url("../images/code.png");*/
 opacity: 0.35;
 }
+.experience-container{
+  transition: all 0.25s ease;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  animation-name: bg-banner-anim-2;
+  animation-duration: 10s;
+  animation-iteration-count:infinite;
+  /*background-color: #ffffff;*/
+  background-image: linear-gradient(160deg, #3a4a53 0%, rgba(192, 192, 211, 0.65) 100%);
+  color: #1a2b34;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.banner-2{
+  position: absolute;
+  filter: contrast(1.5);
+height: 100%;
+max-height: 760px;
+/* height: 100vh;*/
+/*   background-image: url(./images/); */
+ /*  background-position: center;
+  background-size: cover;*/
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ /* position: relative;
+bottom: 66px;*/
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-color: #f8bc45;
+animation-name: bg-banner2-anim;
+animation-duration: 10s;
+animation-iteration-count:infinite;
+/*transition: all 1s ease;*/
+background-image: linear-gradient(160deg, #182025 0%, rgba(248,188,69,0.65) 100%);
+/*background-image: url("../images/code.png");*/
+opacity: 0;
+}
+.banner2-filter{
+  filter: opacity(0.5)!important;
+  max-height: 100px!important;
+}
 
+@keyframes bg-banner2-anim {
+  0%   {opacity: 0;}
+  50%  {opacity: 1;}
+  100% {opacity: 0;}
+}
 @keyframes bg-banner-anim {
   0%   {opacity: 0.35;}
   85%  {opacity: 0.2;}
   100% {opacity: 0.35;}
+}
+@keyframes bg-banner-anim-2 {
+  0%   {opacity: 1;}
+  50%  {opacity: 0.8;}
+  100% {opacity: 1;}
 }
 /*
 @keyframes bg-banner-anim {
@@ -514,6 +677,22 @@ margin: 5px;
 
 /***************************MEDIA QUERY  *******************/
 @media screen and (max-width: 992px) {
+#about-title{
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.li-portfolio{
+  position: relative;
+  bottom: 16px;
+  right: -8px;
+  margin: 12px 0px;
+}
+
+
+  .megamenu, .mega-menu-visible{
+    display: none;
+  }
   .presentation{
   padding: 20px;
   }
