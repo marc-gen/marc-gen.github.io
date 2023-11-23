@@ -1,0 +1,62 @@
+.zoneMeteo{
+    background-color: #F4F6F2;
+    overflow: hidden;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+.zoneMeteo:hover{
+    background-color: #e7ece4;;
+}
+
+.weather .intro img{
+    width: 75px;
+    background-color: #70846352;
+    border-radius: 28px;
+}
+.weather p{
+    margin-bottom: 0px;
+}
+.info-ville{
+    display: flex;
+}
+.weather p{
+    font-size: 13px;
+}
+.weather{
+    display: flex;
+}
+#app-meteo input{
+    height: 21px;
+    border-radius: 5px;
+    border-color: #D6E1CF;
+    color:#708463;
+}
+#app-meteo button{
+    height: 26px;
+    border-radius: 5px;
+    margin:3px 0px;
+    background-color: #F4F6F2;
+    transition: all 0.3s ease;
+    border-color: #D6E1CF;
+    color:#708463;
+}
+#app-meteo button:hover{
+  /*  background-color: #ced5c6;*/
+}
+#app-meteo{
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+.description{
+    color: #708463;
+}
+.intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    left: 20px;
+}
+

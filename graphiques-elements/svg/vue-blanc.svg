@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.27 23.35">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <path id="Icon_awesome-vuejs" data-name="Icon awesome-vuejs" class="cls-1" d="M21.72,0h-4.68l-3.41,5.39L10.71,0H0L13.63,23.35,27.27,0h-5.54ZM3.39,1.95h3.28l6.97,12.06L20.6,1.95h3.27L13.63,19.49,3.39,1.95Z"/>
+  </g>
+</svg>

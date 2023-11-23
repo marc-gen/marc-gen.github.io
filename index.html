@@ -1,274 +1,901 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marc Généreux</title>
- <!--   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>--> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/accueil.css" /> 
-    <link rel="icon" type="image/x-icon" href="./graphiques-elements/favicon-rond-m.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style-tic-tac-toe.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style-meteo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 
-  <header id="ma_navigation">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img  class="logo " src="./graphiques-elements/logo-blanc.svg" alt="">  </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item ">
-              <a class="nav-link active" aria-current="page" href="#">Accueil</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#anchor-about">À propos</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link " href="#anchor-experience">Expérience</a>
-            </li>
-            <li class="nav-item dropdown li-portfolio">
-              <a class="nav-link inline" href="./projets.html">Portfolio</a>
-              <a class=" active dropdown-toggle inline arrow-dropdown" href="./index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img class="img-arrow-dropdown" src="./graphiques-elements/arrow-menu-dropdown.svg" alt=""></a>
-              <div class="acive-bar"></div>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://www.journallenord.com/">Journal Le Nord</a></li>
-                <li><a class="dropdown-item" href="https://patiodunord.com/rampes-de-patio/">Intégration: Patio du nord</a></li>
-                <li><a class="dropdown-item" href="https://goudronslaurentiens.com/installation-de-membrane-de-fondation/">Intégration: Goudrons Laurentiens</a></li>
-                <li><a class="dropdown-item" href="tic-tac-toe/tictactoe.html">Tic-tac-toe</a></li>
-                <li><a class="dropdown-item" href="./meteo/meteo.html">Météo</a></li>
-              </ul>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#contact-anchor">Contact</a>
-            </li>
-          </ul>
+    <div id="app">
+        <img id="image-backdround-site" src="./graphiques-elements/png-jpg/code-2.jpg" alt="">
+        <div id="conteneur-site">
+            
+            <!------------------------CONTENU DU SITE------------------------------------>
+            <!----------MENU---------->
+                <header id="ma_navigation">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid menu-mobile-ajustement">
+                        <a class="navbar-brand" href="#"><img  class="logo " src="./graphiques-elements/svg/logo-vert.svg" alt="">  </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#anchor-portfolio">Portfolio</a> 
+                            </li>
+                            <li class="nav-item ">
+                                <a @click="showDetail(7)" data-bs-toggle="modal" data-bs-target="#about-modal-bd" class="nav-link version-modal" href="#anchor-about">À propos</a>
+                                <a @click="showDetail(7)" class="nav-link version-non-modal" href="#anchor-about">À propos</a>
+                            </li>
+                            <li class="nav-item "> 
+                                <a @click="showDetail(8)" data-bs-toggle="modal" data-bs-target="#xp-modal-bd" class="nav-link version-modal" href="#anchor-experience">Expérience</a>
+                                <a @click="showDetail(8)"  class="nav-link version-non-modal" href="#anchor-experience">Expérience</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a @click="showDetail(9)" data-bs-toggle="modal" data-bs-target="#contact-modal-bd"  class="nav-link version-modal" href="#anchor-contact">Contact</a>
+                                <a @click="showDetail(9)"   class="nav-link version-non-modal" href="#anchor-contact">Contact</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </nav>
+                </header>
+                <div id="header-spacer"></div>  
+<!-----------------------------------------------------------------------------------Modal --------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------------------------------Modal --------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------------------------------Modal --------------------------------------------------------------------------------------------------------->
+<!--------------------- Intro -------------------------->
+
+<!--modal Tic tac toe -->
+<div class="modal fade" id="tic-tac-toe-modal-bd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div  class="projet-details-modal projet-acces">
+            <div class="haut-card"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>                          
+            <div class="row">
+                <div class="col card-centre">
+                    <div class="projet-image-conteneur">
+                        <img class="projet-image" src="./graphiques-elements/png-jpg/tic-tac-toe.png" alt="">
+                        <div class="filter-projet-image"></div>
+                        <div class="bg-projet-image-1"></div>
+                        <div class="bg-projet-image-2"></div>
+                        <div class="bg-projet-image-3"></div>
+                    </div>
+                    <h4>Tic tac toe</h4> 
+                    <p class="text-projet" >Projet de jeux <strong>Tic-tac-toe</strong> développé avec le <strong>framework Javascript Vue.js</strong> lors de mon AEC en programmation Web</p>               
+                    <div class="bouton-projet"><a href="./tic-tac-toe/tic-tac-toe.html"> <div class="bouton-voir-projet">Voir le projet</div> </a></div>
+                </div>    
+            </div>
+            <div class="row icon-tools">
+                <div class="tools-container">
+                    <img src="./graphiques-elements/svg//vue-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/js-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+
+
+                </div>
+            </div>                                                    
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
         </div>
       </div>
-    </nav>
-  </header>
-  <!--------------  bannière   -------------------------> 
-
-     <section class="banner-1" ><section class="banner-2" ></section></section>
-
-      <!-- Mega-menu -->
-      <div class="megamenu" >
-        <div class="container-sm container-megamenu">
-
-        </div>
-      </div>
-      <div class="over-section ">
-          <div class="texte-intro">
-              <div class="image-conteneur">
-                <!--     <img src="./images/pirate.jpg" alt=""> -->
-              </div>
-              <div class="info-conteneur">
-                <h1 class="titre-marc">Marc Généreux</h1>
-                <h2 id="titre-job">Développeur Web</h2>
-              </div>
-          </div>
-          <img class="ordi-dessin" src="./graphiques-elements/ordi-jaunes.svg" alt="">
-          <div id="follower"></div>
     </div>
-<!------------------  À propos   ----------------------> 
-    <div  id="about" class="">
-      <div id="anchor-about"></div>
-      <div class="container  about-container">
-        <div class="row section-presentation-skill">
-   
-          <div class="col">
-            <img class="mokup-about" src="./graphiques-elements/mockup-2.png" alt="">
-          </div>
-          <div class="col">
-            <h2 id="about-title">Bonjour!<div class="boule-titre"></div></h2>
-            <p class="presentation" >Je suis un programmeur web avec de solides connaissances et j'ai 14 mois d'expérience dans le domaine.
-              J’ai aussi développé mes aptitudes à la résolution de problème, le souci du détail et j'ai le sens des responsabilités.
-            </p>
+  </div>
+<!--modal chalvi -->
+<div class="modal fade" id="chalvi-modal-bd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-            <div class="row language-row">
-              <h2 class="titre-languages">Mes compétences</h2>
-              <!--  <h3>Languages</h3> --> 
-            <div class="all-skill">
-                  <div class="conteneur-skill">
-                        <div class="row">
-                          <div class="col col-languages">HTML</div>
-                          <div class="col col-languages">CSS</div>
-                      </div>
-                      <div class="row">
-                            <div class="col">
-                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level html"></div>
-                            </div>
-                            <div class="col">
-                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level css"></div>
-                            </div>
-                      </div>
-                  </div>
-                  <div class="conteneur-skill">
-                        <div class="row" >
-                          <div class="col col-languages">PHP</div>
-                          <div class="col col-languages">LARAVEL</div>
-                      </div>
-                      <div class="row">
-                            <div class="col">
-                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level php"></div>
-                            </div>
-                            <div class="col">
-                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level laravel"></div>
-                            </div>
-                      </div>
-                  </div>
-                  <div class="conteneur-skill">
-                        <div class="row">
-                          <div class="col col-languages">JAVASCRIPT</div>
-                          <div class="col col-languages">VUE.JS</div>
-                        </div>
-                        <div class="row">
-                              <div class="col">
-                                <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level js"></div>
-                              </div>
-                              <div class="col">
-                                <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level vue"></div>
-                              </div>
-                        </div>
-                  </div>
-                  <div class="conteneur-skill">
-                        <div class="row">
-                            <div class="col col-languages">WORDPRESS</div>
-                            <div class="col col-languages">JQUERY</div>
-                        </div>
-                        <div id="anchor-skill-anim" ></div>
-                        <div class="row">
-                              <div class="col">
-                                <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level wordPress"></div>
-                              </div>
-                              <div class="col">
-                                <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level jquery"></div>
-                              </div>
-                        </div> 
-                  </div>
-                  <div class="conteneur-skill"> 
-                        <div class="row">
-                          <div class="col col-languages">PHOTOSHOP</div>
-                          <div class="col col-languages">ILLUSTRATOR</div>
-                        </div>
-                        <div class="row">
-                              <div class="col">
-                                <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level ps"></div>
-                              </div>
-                              <div class="col">
-                                <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level ai"></div>
-                              </div>
-                        </div>
+        <div class="modal-body">
+          <div  class="projet-details-modal projet-acces">
+            <div class="haut-card"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            
+            <div class="row">
+                <div class="col card-centre">
+                    <div class="projet-image-conteneur">
+                        <img class="projet-image" src="./graphiques-elements/png-jpg/chalvi-1.png" alt="">
+                        <div class="filter-projet-image"></div>
+                        <div class="bg-projet-image-1"></div>
+                        <div class="bg-projet-image-2"></div>
+                        <div class="bg-projet-image-3"></div>
+                    </div>
+                    <h4>Chalvi Chéri</h4> 
+                    <p class="text-projet" >Projet de commerce en ligne fait dans <strong> WordPress/WooCommerce (thème Storefront)</strong> lors de mon AEC en Programmation et conception de sites Web.</p>               
+                   <!-- <div class="bouton-projet"><a href="#"> <div class="bouton-voir-plus">Voir plus</div> </a></div> -->
+                </div>
+
+                  
+            </div>
+            <div class="row icon-tools">
+                <div class="tools-container">
+                    <img src="./graphiques-elements/svg/wordpress-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/php-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/js-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+
+
+                </div>
+            </div>                                                    
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- modal Journal -->
+<div class="modal fade" id="journal-acces-modal-bd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div  class="projet-details-modal projet-acces">
+            <div class="haut-card"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            
+            <div class="row">
+
+                <div class="col card-centre">
+                    <div class="projet-image-conteneur">
+                        <img class="projet-image" src="./graphiques-elements/png-jpg/journal-le-nord.png" alt="">
+                        <div class="filter-projet-image"></div>
+                        <div class="bg-projet-image-1"></div>
+                        <div class="bg-projet-image-3"></div>
+                    </div>
+                    <h4>Journal Accès</h4> 
+                    <p class="text-projet" >Programmation et intégration des fonctionnalités et du design à partir d'une maquette Web. Développé dans <strong>WordPress (thème Divi)</strong> à <strong>"La Petite boite Web".</strong></p>               
+                    <div class="bouton-projet"><a href="https://www.journalacces.ca/"> <div class="bouton">Voir le site</div> </a></div>
+                </div>
+                  
+            </div>
+            <div class="row icon-tools">
+                <div class="tools-container">
+                    <img src="./graphiques-elements/svg/wordpress-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/php-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/jquery.svg" alt="">
+                    <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+
+
+                </div>
+            </div>                                                     
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal Météo-->
+  <div class="modal fade" id="meteo-modal-bd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div  class="projet-details-modal projet-acces">
+            <div class="haut-card"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            
+            <div class="row">
+                <div class="col card-centre">
+                    <div class="projet-image-conteneur">
+                        <img class="projet-image" src="./graphiques-elements/png-jpg/meteo.png" alt="">
+                        <div class="filter-projet-image"></div>
+                        <div class="bg-projet-image-1"></div>
+                        <div class="bg-projet-image-2"></div>
+                        <div class="bg-projet-image-3"></div>
+                    </div>
+                    <h4>Météo</h4> 
+                    <p class="text-projet" >Projet d'application front-end d'une page <strong>Météo</strong> développé avec le <strong>framework Javascript Vue.js</strong></strong> lors de mon AEC en Programmation et conception de sites Web.</p>               
+                    <div class="bouton-projet"><a href="./meteo/meteo.html"> <div class="bouton-voir-projet">Voir le projet</div> </a></div>
+                </div>
+
+                  
+            </div>
+            <div class="row icon-tools">
+                <div class="tools-container">
+                    <img src="./graphiques-elements/svg//vue-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/js-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+
+
+                </div>
+            </div>                                                      
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--modal Patio -->
+<div class="modal fade" id="patio-modal-bd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div  class="projet-details-modal projet-acces">
+            <div class="haut-card"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            
+            <div class="row">
+                <div class="col card-centre">
+                    <div class="projet-image-conteneur">
+                        <img class="projet-image" src="./graphiques-elements/png-jpg/patio-du-nord.png" alt="">
+                        <div class="filter-projet-image"></div>
+                        <div class="bg-projet-image-1"></div>
+                        <div class="bg-projet-image-2"></div>
+                        <div class="bg-projet-image-3"></div>
+                    </div>
+                    <h4>Patio du nord</h4> 
+                    <p class="text-projet" >Intégration de la page "Rampe de patio" pour <strong>Patio du nord.</strong> fait dans<strong> WordPress</strong> avec le <strong>Tatsu</strong> builder.</p>               
+                    <p class="text-projet" >Création d'icônes et ajustements d'images dans <strong>Illustrator</strong> et <strong>Photoshop.</strong></p>               
+                    <div class="bouton-projet"><a href="https://patiodunord.com/rampes-de-patio/"> <div class="bouton">Voir le site</div> </a></div>
+                </div>
+
+                  
+            </div>
+            <div class="row icon-tools">
+                <div class="tools-container">
+                    <img src="./graphiques-elements/svg/wordpress-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/illustrator.svg" alt="">
+                    <img src="./graphiques-elements/svg/photoshop.svg" alt="">
+                    <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+
+
+                </div>
+            </div>                                                       
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- modal Goudron -->
+<div class="modal fade" id="goudron-modal-bd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div  class="projet-details-modal projet-acces">
+            <div class="haut-card"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            
+            <div class="row">
+                <div class="col card-centre">
+                    <div class="projet-image-conteneur">
+                        <img class="projet-image" src="./graphiques-elements/png-jpg/goudron-laurentiens.png" alt="">
+                        <div class="filter-projet-image"></div>
+                        <div class="bg-projet-image-1"></div>
+                        <div class="bg-projet-image-2"></div>
+                        <div class="bg-projet-image-3"></div>
+                    </div>
+                    <h4>Goudrons Laurentiens</h4> 
+                    <p class="text-projet" >Intégration de 3 pages de services pour <strong>Goudrons Laurentiens</strong>. fait dans<strong> WordPress</strong> avec le <strong>thème Divi.</strong></p>               
+                    <p class="text-projet" >Création d'icônes et ajustements d'images dans <strong>Illustrator</strong> et <strong>Photoshop.</strong></p>               
+                    <div class="bouton-projet"><a href="https://goudronslaurentiens.com/installation-de-membrane-de-fondation/"> <div class="bouton">Voir le site</div> </a></div>
+                </div>
+
+                  
+            </div>
+            <div class="row icon-tools">
+                <div class="tools-container">
+                    <img src="./graphiques-elements/svg/wordpress-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/illustrator.svg" alt="">
+                    <img src="./graphiques-elements/svg/photoshop.svg" alt="">
+                    <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                    <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+                </div>
+            </div>                                                      
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal about -->
+<div class="modal fade" id="about-modal-bd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div  class="projet-details-modal projet-acces">
+            <div class="haut-card"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+
+            <div class="projet-intro-modal">
+              <p class="presentation">"<span>Hej!</span> Je suis développeur Web. J'aimerais vous aider à faire
+                  vos sites ou applications Web le plus design, réactif et efficacement
+                  possible. N'hésitez pas à m'appeler"</p>
+                  <p class="presentation" ><span>- Marc</span></p>
+                  <div class="icon-tools-media">
+                     <a href="#"><img src="./graphiques-elements/svg/facebook-vert.svg" alt=""></a> 
+                     <a href="#"><img src="./graphiques-elements/svg/linkedin-vert.svg" alt=""></a> 
                   </div>
             </div>
-<!--
-              <div class="row ">
-                <div class="col">
-                  <div class="skill-container"></div> <div class="skill-level"></div>
+
+
+            <h2 id="anchor-about"  class="titre-languages">Mes compétences</h2>
+            <p>En effet, j'ai une très bonne maitrise en intégration  Web 
+                (Html,CSS, Javascript). J'adore faire du front-end et je suis bon 
+                avec les framework javascript (à noter que j'ai plus dexpérience
+                dans Vue.JS). J'aime beaucoup aussi le back-end, je connais
+                très bien PHP et je suis familier avec Laravel. Je suis également 
+                très créatif et je me débrouille bien avec la suite Adobe. Comme
+                CMS je suis familier avec Wordpress. </p>
+            <!--  <h3>Languages</h3> --> 
+          <div class="all-skill">
+                <div class="conteneur-skill">
+                      <div class="row">
+                        <div class="col col-languages">HTML</div>
+                        <div class="col col-languages">CSS</div>
+                    </div>
+                    <div class="row">
+                          <div class="col">
+                            <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level html"></div>
+                          </div>
+                          <div class="col">
+                            <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level css"></div>
+                          </div>
+                    </div>
                 </div>
-                <div class="col">
-                </div><div class="skill-container"></div> <div class="skill-level"></div>
-                </div>--> 
-              
+                <div class="conteneur-skill">
+                      <div class="row" >
+                        <div class="col col-languages">PHP</div>
+                        <div class="col col-languages">LARAVEL</div>
+                    </div>
+                    <div class="row">
+                          <div class="col">
+                            <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level php"></div>
+                          </div>
+                          <div class="col">
+                            <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level laravel"></div>
+                          </div>
+                    </div>
+                </div>
+                <div class="conteneur-skill">
+                      <div class="row">
+                        <div class="col col-languages">JAVASCRIPT</div>
+                        <div class="col col-languages">VUE.JS</div>
+                      </div>
+                      <div class="row">
+                            <div class="col">
+                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level js"></div>
+                            </div>
+                            <div class="col">
+                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level vue"></div>
+                            </div>
+                      </div>
+                </div>
+                <div class="conteneur-skill">
+                      <div class="row">
+                          <div class="col col-languages">WORDPRESS</div>
+                          <div class="col col-languages">JQUERY</div>
+                      </div>
+                      <div id="anchor-skill-anim" ></div>
+                      <div class="row">
+                            <div class="col">
+                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level wordPress"></div>
+                            </div>
+                            <div class="col">
+                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level jquery"></div>
+                            </div>
+                      </div> 
+                </div>
+                <div class="conteneur-skill"> 
+                      <div class="row">
+                        <div class="col col-languages">PHOTOSHOP</div>
+                        <div class="col col-languages">ILLUSTRATOR</div>
+                      </div>
+                      <div class="row">
+                            <div class="col">
+                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level ps"></div>
+                            </div>
+                            <div class="col">
+                              <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level ai"></div>
+                            </div>
+                      </div>
+                </div>
+          </div>                                                     
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--modal xp -->
+<div class="modal fade" id="xp-modal-bd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div  class="projet-details-modal projet-acces">
+            <div class="haut-card"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <h3>Expérience Web</h3>
+            <div class="row">             
+                <div class="col col-indicateur">                                              
+                  <h4>AEC - Conception et programmation de sites Web</h4>
+                  <p>Cégep de Saint-Jérome - Saint-Jérôme, QC</p>
+                  <p>Mai 2020 à Septembre 2021</p>
+                </div>
+               
+            </div>
+      
+            <div class="row">                                                                                    
+                    <div class="col col-indicateur">
+                      <h4>Intégrateur Web</h4>
+                      <p>La petite boite web - Piedmont, QC</p>
+                      <p>Septembre 2021 à Mai 2022</p>
+                      <ul>
+                        <li>Intégration et programmation de fonctionnalités Web sur WordPress (Divi, WPBakery, Tatsu builder).</li>
+                        <li>Forte utilisation de code HTML, CSS, PHP, Javascript et Jquery.</li>
+                        <li>Utilisation de Photoshop et Illustrator pour des éléments graphiques.</li>
+                      </ul>
+                    </div>
+            </div>  
+                                                  
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--modal contact -->
+<div class="modal fade" id="contact-modal-bd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div  class="projet-details-modal  modal-contact">
+            <div class="haut-card"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            
+            <p id="anchor-contact" class="presentation">"<span>Hej!</span> Je suis normalement disponible du lundi au vendredi de 9 à 17 heure. N'hésitez pas à m'appeller pour toutes questions... ou pour prendre un café!</p>
+            <p class="presentation" ><span>- Marc</span></p>
+            <div class="presentation" > <div> <a href="tel:14383762207"><img class="icon-tools-media" src="./graphiques-elements/svg/cell-vert-2.svg" alt=""></a></div> <div><span><a class="liens-contact" href="tel:14383762207">438 376 2207</a></span></div> </div>
+            <div class="presentation mail-presentation" > <div> <a href="mailto:marc_gen@hotmail.com"><img class="icon-tools-media" src="./graphiques-elements/svg/mail-vert.svg" alt=""></a></div> <div><span><a class="liens-contact" href="mailto:marc_gen@hotmail.com">marc_gen@hotmail.com</a></span></div> </div>                                                  
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-----------------------------------------------------------------------------------Modal FIN--------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------------------------------Modal FIN--------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------------------------------------Modal FIN--------------------------------------------------------------------------------------------------------->
+                <!----------Portfolio---------->
+                    <div class="row-portfolio ">
+                        <div class="portfolio-demi gauche">
+                          <div class="row">
+                            <div class="module-titre">
+                                <div class="conteneur-h1">
+                                    <div class="border-left"></div>
+                                    <h1>Marc Généreux</h1>
+                                </div>
+
+                                <div class="border-bottome"></div>
+                                <h2>Développeur <div class="red"></div><span>Web</span> </h2>
+                            </div>
+                          </div>
+                          <div class="version-modal">
+                            <div class="conteneur">
+                                <div @click="showDetail(1)"  class="rectangular zoneTictactoe"><h6 id="titre-tictactoe" >Tic Tac Toe</h6><tictactoe></tictactoe><button class="bouton-plus" data-bs-toggle="modal" data-bs-target="#tic-tac-toe-modal-bd" >+</button></div>
+                                <div @click="showDetail(2)" data-bs-toggle="modal" data-bs-target="#chalvi-modal-bd" class="square-goutte ch over-cadre"><div class="chalvi"><img src="./graphiques-elements/png-jpg/chalvi-plante-300-300.png" alt=""></div></div>
+                                <div @click="showDetail(3)" data-bs-toggle="modal" data-bs-target="#journal-acces-modal-bd" class="square ch-hover-standard"><div class="conteneur-image"><img src="./graphiques-elements/svg/accent.svg" alt=""></div></div>
+                                <div @click="showDetail(4)" class="rectangular zoneMeteo"><div class="conteneur-image"><meteo></meteo><button class="bouton-plus-meteo" data-bs-toggle="modal" data-bs-target="#meteo-modal-bd" >+</button></div></div>
+                                <div @click="showDetail(5)" data-bs-toggle="modal" data-bs-target="#patio-modal-bd" class="square ch-hover-standard"><div class="conteneur-image"><img src="./graphiques-elements/svg/patio-2.svg" alt=""></div></div>
+                                <div @click="showDetail(6)" data-bs-toggle="modal" data-bs-target="#goudron-modal-bd" class="square-goutte ch-hover-standard"><div class="conteneur-image"><img src="./graphiques-elements/svg/goutte-dessin.svg" alt=""></div></div>
+                                <div @click="showDetail(7)" data-bs-toggle="modal" data-bs-target="#about-modal-bd" class="square ch-hover-standard"><div style="font-size: 90px; color: #708463;" class="conteneur-image">?</div></div>
+                                <div @click="showDetail(8)" data-bs-toggle="modal" data-bs-target="#xp-modal-bd" class="rectangular zoneMeteo"><div class="conteneur-image"><div class="xp">XP</div></div></div>
+                                <div id="anchor-portfolio" data-bs-toggle="modal" data-bs-target="#contact-modal-bd"  @click="showDetail(9)" class="square ch-hover-standard"><div class="conteneur-image conteneur-image-cell"><img src="./graphiques-elements/svg/cell-vert-2.svg" alt=""></div></div>
+                                <!-- Button trigger modal -->   
+
+                                <div class="mosaique-ligne-sep"></div>
+                            </div>
+                          </div>
+                          <div class="version-non-modal">
+                            <div class="conteneur">
+                                <div @click="showDetail(1)"  class="rectangular zoneTictactoe"><h6 id="titre-tictactoe" >Tic Tac Toe</h6><tictactoe></tictactoe></div>
+                                <div @click="showDetail(2)"  class="square-goutte ch over-cadre"><div class="chalvi"><img src="./graphiques-elements/png-jpg/chalvi-plante-300-300.png" alt=""></div></div>
+                                <div @click="showDetail(3)"  class="square ch-hover-standard"><div class="conteneur-image"><img src="./graphiques-elements/svg/accent.svg" alt=""></div></div>
+                                <div @click="showDetail(4)"  class="rectangular zoneMeteo"><div class="conteneur-image"><meteo></meteo></div></div>
+                                <div @click="showDetail(5)"  class="square ch-hover-standard"><div class="conteneur-image"><img src="./graphiques-elements/svg/patio-2.svg" alt=""></div></div>
+                                <div @click="showDetail(6)"  class="square-goutte ch-hover-standard"><div class="conteneur-image"><img src="./graphiques-elements/svg/goutte-dessin.svg" alt=""></div></div>
+                                <div @click="showDetail(7)"  class="square ch-hover-standard"><div style="font-size: 90px; color: #708463;" class="conteneur-image">?</div></div>
+                                <div @click="showDetail(8)"  class="rectangular zoneMeteo"><div class="conteneur-image"><div class="xp">XP</div></div></div>
+                                <div id="anchor-portfolio"   @click="showDetail(9)" class="square ch-hover-standard"><div class="conteneur-image conteneur-image-cell"><img src="./graphiques-elements/svg/cell-vert-2.svg" alt=""></div></div>
+                                <!-- Button trigger modal -->   
+
+                                <div class="mosaique-ligne-sep"></div>
+                            </div>
+                          </div>
+
+
+                        </div>
+
+
+                        
+                        <div  class="portfolio-demi droite">
+                          <div class="droite-spacer"></div>
+                           <div class="display-start">
+                                    <!--------------------- Intro -------------------------->
+                                    <div v-show="showId == 0" class="projet-details projet-intro projet-transform-0px">
+                                        <p class="presentation">"<span>Hej!</span> Je suis développeur Web. J'aimerais vous aider à faire
+                                            vos sites ou applications Web le plus design, réactif et efficacement
+                                            possible. N'hésitez pas à m'appeler"</p>
+                                            <p class="presentation" ><span>- Marc</span></p>
+                                            <div class="icon-tools-media">
+                                               <a href="#"><img src="./graphiques-elements/svg/facebook-vert.svg" alt=""></a> 
+                                               <a href="#"><img src="./graphiques-elements/svg/linkedin-vert.svg" alt=""></a> 
+                                            </div>
+                                    </div>
+                                    <!--------------------- Tictactoe -------------------------->
+                                    <div v-show="showId == 1" class="projet-details projet-acces">
+                                        <div class="haut-card"><a  v-show="detailsdisplay == true" @click="showDetail(0)" ><img style="width: 20px;" src="./graphiques-elements/svg/cafe-x-vert.svg" alt=""></a></div>
+                                        
+                                        <div class="row">
+                                            <div class="col card-centre">
+                                                <div class="projet-image-conteneur">
+                                                    <img class="projet-image" src="./graphiques-elements/png-jpg/tic-tac-toe.png" alt="">
+                                                    <div class="filter-projet-image"></div>
+                                                    <div class="bg-projet-image-1"></div>
+                                                    <div class="bg-projet-image-2"></div>
+                                                    <div class="bg-projet-image-3"></div>
+                                                </div>
+                                                <h4>Tic tac toe</h4> 
+                                                <p class="text-projet" >Projet de jeux <strong>Tic-tac-toe</strong> développé avec le <strong>framework Javascript Vue.js</strong> lors de mon AEC en programmation Web</p>               
+                                                <div class="bouton-projet"><a href="./tic-tac-toe/tic-tac-toe.html"> <div class="bouton-voir-projet">Voir le projet</div> </a></div>
+                                            </div>    
+                                        </div>
+                                        <div class="row icon-tools">
+                                            <div class="tools-container">
+                                                <img src="./graphiques-elements/svg//vue-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/js-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+                            
+    
+                                            </div>
+                                        </div>                                                     
+                                    </div>
+                                    <!--------------------- Chalvi -------------------------->
+                                   <div v-show="showId == 2" class="projet-details projet-acces">
+                                    <div class="haut-card"><a  v-show="detailsdisplay == true" @click="showDetail(0)" ><img style="width: 20px;" src="./graphiques-elements/svg/cafe-x-vert.svg" alt=""></a></div>
+                                    
+                                    <div class="row">
+                                        <div class="col card-centre">
+                                            <div class="projet-image-conteneur">
+                                                <img class="projet-image" src="./graphiques-elements/png-jpg/chalvi-1.png" alt="">
+                                                <div class="filter-projet-image"></div>
+                                                <div class="bg-projet-image-1"></div>
+                                                <div class="bg-projet-image-2"></div>
+                                                <div class="bg-projet-image-3"></div>
+                                            </div>
+                                            <h4>Chalvi Chéri</h4> 
+                                            <p class="text-projet" >Projet de commerce en ligne fait dans <strong> WordPress/WooCommerce (thème Storefront)</strong> lors de mon AEC en Programmation et conception de sites Web.</p>               
+                                          <!--  <div class="bouton-projet"><a href="#"> <div class="bouton-voir-plus">Voir plus</div> </a></div> -->
+                                        </div>
+        
+                                          
+                                    </div>
+                                    <div class="row icon-tools">
+                                        <div class="tools-container">
+                                            <img src="./graphiques-elements/svg/wordpress-blanc.svg" alt="">
+                                            <img src="./graphiques-elements/svg/php-blanc.svg" alt="">
+                                            <img src="./graphiques-elements/svg/js-blanc.svg" alt="">
+                                            <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                                            <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+                        
+
+                                        </div>
+                                    </div>                                                     
+                                </div>
+
+
+
+                                   <!--------------------- Journal Accès -------------------------->
+                                    <div v-show="showId == 3" class="projet-details projet-acces">
+                                        <div class="haut-card"><a  v-show="detailsdisplay == true" @click="showDetail(0)" ><img style="width: 20px;" src="./graphiques-elements/svg/cafe-x-vert.svg" alt=""></a></div>
+                                        
+                                        <div class="row">
+                          
+                                            <div class="col card-centre">
+                                                <div class="projet-image-conteneur">
+                                                    <img class="projet-image" src="./graphiques-elements/png-jpg/journal-le-nord.png" alt="">
+                                                    <div class="filter-projet-image"></div>
+                                                    <div class="bg-projet-image-1"></div>
+                                                    <div class="bg-projet-image-3"></div>
+                                                </div>
+                                                <h4>Journal Accès</h4> 
+                                                <p class="text-projet" >Programmation et intégration des fonctionnalités et du design à partir d'une maquette Web. Développé dans <strong>WordPress (thème Divi)</strong> à <strong>"La Petite boite Web".</strong></p>               
+                                                <div class="bouton-projet"><a href="https://www.journalacces.ca/"> <div class="bouton">Voir le site</div> </a></div>
+                                            </div>
+                                              
+                                        </div>
+                                        <div class="row icon-tools">
+                                            <div class="tools-container">
+                                                <img src="./graphiques-elements/svg/wordpress-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/php-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/jquery.svg" alt="">
+                                                <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+                            
+
+                                            </div>
+                                        </div>                                                     
+                                    </div>
+                                 
+
+                                    <!--------------------- Météo -------------------------->
+        
+                                    <div v-show="showId == 4" class="projet-details projet-acces">
+                                        <div class="haut-card"><a  v-show="detailsdisplay == true" @click="showDetail(0)" ><img style="width: 20px;" src="./graphiques-elements/svg/cafe-x-vert.svg" alt=""></a></div>
+                                        
+                                        <div class="row">
+                                            <div class="col card-centre">
+                                                <div class="projet-image-conteneur">
+                                                    <img class="projet-image" src="./graphiques-elements/png-jpg/meteo.png" alt="">
+                                                    <div class="filter-projet-image"></div>
+                                                    <div class="bg-projet-image-1"></div>
+                                                    <div class="bg-projet-image-2"></div>
+                                                    <div class="bg-projet-image-3"></div>
+                                                </div>
+                                                <h4>Météo</h4> 
+                                                <p class="text-projet" >Projet d'application front-end d'une page <strong>Météo</strong> développé avec le <strong>framework Javascript Vue.js</strong></strong> lors de mon AEC en Programmation et conception de sites Web.</p>               
+                                                <div class="bouton-projet"><a href="./meteo/meteo.html"> <div class="bouton-voir-projet">Voir le projet</div> </a></div>
+                                            </div>
+
+                                              
+                                        </div>
+                                        <div class="row icon-tools">
+                                            <div class="tools-container">
+                                                <img src="./graphiques-elements/svg//vue-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/js-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+                            
+    
+                                            </div>
+                                        </div>                                                     
+                                    </div>
+                                    <!--------------------- Patio du nord -------------------------->
+                                    <div v-show="showId == 5" class="projet-details projet-acces">
+                                        <div class="haut-card"><a  v-show="detailsdisplay == true" @click="showDetail(0)" ><img style="width: 20px;" src="./graphiques-elements/svg/cafe-x-vert.svg" alt=""></a></div>
+                                        
+                                        <div class="row">
+                                            <div class="col card-centre">
+                                                <div class="projet-image-conteneur">
+                                                    <img class="projet-image" src="./graphiques-elements/png-jpg/patio-du-nord.png" alt="">
+                                                    <div class="filter-projet-image"></div>
+                                                    <div class="bg-projet-image-1"></div>
+                                                    <div class="bg-projet-image-2"></div>
+                                                    <div class="bg-projet-image-3"></div>
+                                                </div>
+                                                <h4>Patio du nord</h4> 
+                                                <p class="text-projet" >Intégration de la page "Rampe de patio" pour <strong>Patio du nord.</strong> fait dans<strong> WordPress</strong> avec le <strong>Tatsu</strong> builder.</p>               
+                                                <p class="text-projet" >Création d'icônes et ajustements d'images dans <strong>Illustrator</strong> et <strong>Photoshop.</strong></p>               
+                                                <div class="bouton-projet"><a href="https://patiodunord.com/rampes-de-patio/"> <div class="bouton">Voir le site</div> </a></div>
+                                            </div>
+
+                                              
+                                        </div>
+                                        <div class="row icon-tools">
+                                            <div class="tools-container">
+                                                <img src="./graphiques-elements/svg/wordpress-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/illustrator.svg" alt="">
+                                                <img src="./graphiques-elements/svg/photoshop.svg" alt="">
+                                                <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+                            
+
+                                            </div>
+                                        </div>                                                     
+                                    </div>
+                                      <!--------------------- Goudrons Laurentiens -------------------------->
+                                      <div v-show="showId == 6" class="projet-details projet-acces">
+                                        <div class="haut-card"><a  v-show="detailsdisplay == true" @click="showDetail(0)" ><img style="width: 20px;" src="./graphiques-elements/svg/cafe-x-vert.svg" alt=""></a></div>
+                                        
+                                        <div class="row">
+                                            <div class="col card-centre">
+                                                <div class="projet-image-conteneur">
+                                                    <img class="projet-image" src="./graphiques-elements/png-jpg/goudron-laurentiens.png" alt="">
+                                                    <div class="filter-projet-image"></div>
+                                                    <div class="bg-projet-image-1"></div>
+                                                    <div class="bg-projet-image-2"></div>
+                                                    <div class="bg-projet-image-3"></div>
+                                                </div>
+                                                <h4>Goudrons Laurentiens</h4> 
+                                                <p class="text-projet" >Intégration de 3 pages de services pour <strong>Goudrons Laurentiens</strong>. fait dans<strong> WordPress</strong> avec le <strong>thème Divi.</strong></p>               
+                                                <p class="text-projet" >Création d'icônes et ajustements d'images dans <strong>Illustrator</strong> et <strong>Photoshop.</strong></p>               
+                                                <div class="bouton-projet"><a href="https://goudronslaurentiens.com/installation-de-membrane-de-fondation/"> <div class="bouton">Voir le site</div> </a></div>
+                                            </div>
+     
+                                              
+                                        </div>
+                                        <div class="row icon-tools">
+                                            <div class="tools-container">
+                                                <img src="./graphiques-elements/svg/wordpress-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/illustrator.svg" alt="">
+                                                <img src="./graphiques-elements/svg/photoshop.svg" alt="">
+                                                <img src="./graphiques-elements/svg/css-blanc.svg" alt="">
+                                                <img src="./graphiques-elements/svg/html-blanc.svg" alt="">
+                                            </div>
+                                        </div>                                                     
+                                    </div>
+                                    <!--------------------- XP -------------------------->
+                                    <div v-show="showId == 7" class="projet-details projet-intro  projet-transform-0px">
+                                        <div class="haut-card"><a  v-show="detailsdisplay == true" @click="showDetail(0)" ><img style="width: 20px;" src="./graphiques-elements/svg/cafe-x-vert.svg" alt=""></a></div>
+                                        <h2 id="anchor-about"  class="titre-languages">Mes compétences</h2>
+                                        <p>En effet, j'ai une très bonne maitrise en intégration  Web 
+                                            (Html,CSS, Javascript). J'adore faire du front-end et je suis bon 
+                                            avec les framework javascript (à noter que j'ai plus dexpérience
+                                            dans Vue.JS). J'aime beaucoup aussi le back-end, je connais
+                                            très bien PHP et je suis familier avec Laravel. Je suis également 
+                                            très créatif et je me débrouille bien avec la suite Adobe. Comme
+                                            CMS je suis familier avec Wordpress. </p>
+                                        <!--  <h3>Languages</h3> --> 
+                                      <div class="all-skill">
+                                            <div class="conteneur-skill">
+                                                  <div class="row">
+                                                    <div class="col col-languages">HTML</div>
+                                                    <div class="col col-languages">CSS</div>
+                                                </div>
+                                                <div class="row">
+                                                      <div class="col">
+                                                        <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level html"></div>
+                                                      </div>
+                                                      <div class="col">
+                                                        <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level css"></div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="conteneur-skill">
+                                                  <div class="row" >
+                                                    <div class="col col-languages">PHP</div>
+                                                    <div class="col col-languages">LARAVEL</div>
+                                                </div>
+                                                <div class="row">
+                                                      <div class="col">
+                                                        <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level php"></div>
+                                                      </div>
+                                                      <div class="col">
+                                                        <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level laravel"></div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="conteneur-skill">
+                                                  <div class="row">
+                                                    <div class="col col-languages">JAVASCRIPT</div>
+                                                    <div class="col col-languages">VUE.JS</div>
+                                                  </div>
+                                                  <div class="row">
+                                                        <div class="col">
+                                                          <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level js"></div>
+                                                        </div>
+                                                        <div class="col">
+                                                          <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level vue"></div>
+                                                        </div>
+                                                  </div>
+                                            </div>
+                                            <div class="conteneur-skill">
+                                                  <div class="row">
+                                                      <div class="col col-languages">WORDPRESS</div>
+                                                      <div class="col col-languages">JQUERY</div>
+                                                  </div>
+                                                  <div id="anchor-skill-anim" ></div>
+                                                  <div class="row">
+                                                        <div class="col">
+                                                          <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level wordPress"></div>
+                                                        </div>
+                                                        <div class="col">
+                                                          <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level jquery"></div>
+                                                        </div>
+                                                  </div> 
+                                            </div>
+                                            <div class="conteneur-skill"> 
+                                                  <div class="row">
+                                                    <div class="col col-languages">PHOTOSHOP</div>
+                                                    <div class="col col-languages">ILLUSTRATOR</div>
+                                                  </div>
+                                                  <div class="row">
+                                                        <div class="col">
+                                                          <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level ps"></div>
+                                                        </div>
+                                                        <div class="col">
+                                                          <div class="div-skill"></div><div class="skill-container"></div> <div class="skill-level ai"></div>
+                                                        </div>
+                                                  </div>
+                                            </div>
+                                      </div>
+                                    </div>
+                                    <!--------------------- Intro -------------------------->
+                                    <div v-show="showId == 8" class="projet-details projet-intro projet-experience  projet-transform-0px">
+                                        <div class="haut-card"><a  v-show="detailsdisplay == true" @click="showDetail(0)" ><img style="width: 20px;" src="./graphiques-elements/svg/cafe-x-vert.svg" alt=""></a></div>
+                                        <h3>Expérience Web</h3>
+                                        <div class="row">             
+                                            <div class="col col-indicateur">                                              
+                                              <h4>AEC - Conception et programmation de sites Web</h4>
+                                              <p>Cégep de Saint-Jérome - Saint-Jérôme, QC</p>
+                                              <p>Mai 2020 à Septembre 2021</p>
+                                            </div>
+                                           
+                                        </div>
+                                  
+                                        <div class="row">                                                                                    
+                                                <div class="col col-indicateur">
+                                                  <h4>Intégrateur Web</h4>
+                                                  <p>La petite boite web - Piedmont, QC</p>
+                                                  <p>Septembre 2021 à Mai 2022</p>
+                                                  <ul>
+                                                    <li>Intégration et programmation de fonctionnalités Web sur WordPress (Divi, WPBakery, Tatsu builder).</li>
+                                                    <li>Forte utilisation de code HTML, CSS, PHP, Javascript et Jquery.</li>
+                                                    <li>Utilisation de Photoshop et Illustrator pour des éléments graphiques.</li>
+                                                  </ul>
+                                                </div>
+                                        </div>   
+                                    </div>
+                        
+                                    <!--------------------- Contact-------------------------->
+                                    <div v-show="showId == 9" class="projet-details projet-intro projet-transform-0px">
+                                            <div class="haut-card"><a  v-show="detailsdisplay == true" @click="showDetail(0)" ><img style="width: 20px;" src="./graphiques-elements/svg/cafe-x-vert.svg" alt=""></a></div>
+                                       
+                                            <p id="anchor-contact" class="presentation">"<span>Hej!</span> Je suis normalement disponible du lundi au vendredi de 9 à 17 heure. N'hésitez pas à m'appeller pour toutes questions... ou pour prendre un café!</p>
+                                            <p class="presentation" ><span>- Marc</span></p>
+                                            <div class="presentation" > <div> <a href="tel:14383762207"><img class="icon-tools-media" src="./graphiques-elements/svg/cell-vert-2.svg" alt=""></a></div> <div><span><a class="liens-contact" href="tel:14383762207">438 376 2207</a></span></div> </div>
+                                            <div class="presentation mail-presentation" > <div> <a href="mailto:marc_gen@hotmail.com"><img class="icon-tools-media" src="./graphiques-elements/svg/mail-vert.svg" alt=""></a></div> <div><span><a class="liens-contact" href="mailto:marc_gen@hotmail.com">marc_gen@hotmail.com</a></span></div> </div>
+
+                                   
+
+                                    </div>
+
+                           </div>
+
+                          </div>
+                        </div>
+                    </div>
+
+                
+                <!------------------------FIN CONTENU DU SITE------------------------------------> 
+
 
         
-
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="xp-like-bg">
-        <div class="diviseur-courbe"></div>
-      </div>
-
-    </div>
- 
-  <!------------------  Expérience web   ----------------------> 
-  
-  <div class="container  experience-container" id="anchor-experience">
+        </div><!----conteneur absolue  -->
 
 
-      <h2>Expérience Web</h2>
-      <div class="row">
-        <h3>Formation</h3>
-          <div class="col col-indicateur">
-            
-            <h4>AEC - Conception et programmation de sites Web</h4>
-            <p>Cégep de Saint-Jérome - Saint-Jérôme, QC</p>
-            <p>Mai 2020 à Septembre 2021</p>
-          </div>
-         
-      </div>
-
-      <div class="row">
-              <h3>Expérience professionnelle</h3>
-              
-              <div class="col col-indicateur">
-                <h4>Intégrateur Web/Programmeur</h4>
-                <p>Cienapps - Prévost, QC</p>
-                <p>Juin 2022 à Octobre 2022</p>
-                <ul>
-                  <li>Intégration et programmation de fonctionnalités Web sur WordPress (Divi). Utilisation des langages suivants : HTML, CSS, PHP, Javascript et Jquery.</li>
-                  <li>Utilisation de Photoshop et Illustrator pour des éléments graphiques.</li>
-                  <li>L’intégration était en lien avec les sites déjà existants suivants :</li>
-                  <li><a href="https://cienapps.com/">Cienapps</a>, <a href="https://cieblink.com/">Cieblink</a>et <a href="https://ciemetric.com/">Ciemetric</a>  </li>
-                  <li>Utilisation du WLangage dans WinDev pour le logiciel Cienapps.</li>
-                </ul>
-              </div>
-              
-              <div class="col col-indicateur">
-                <h4>Intégrateur Web</h4>
-                <p>La petite boite web - Piedmont, QC</p>
-                <p>Septembre 2021 à Mai 2022</p>
-                <ul>
-                  <li>Intégration et programmation de fonctionnalités Web sur WordPress (Divi, WPBakery, Tatsu builder).</li>
-                  <li>Forte utilisation de code HTML, CSS, PHP, Javascript et Jquery.</li>
-                  <li>Utilisation de Photoshop et Illustrator pour des éléments graphiques.</li>
-                  <li>Exemple de réalisation : <a href="https://www.journallenord.com/">Journal Le Nord</a> </li>
-                </ul>
-              </div>
-      </div>   
-  </div>
-
-
-
-<!------------------  Contact   ----------------------> 
-  <div class="contact-container">
-      <div id="contact-title">
-        <h2 >Contact</h2>
-        <div class="row contact-row">
-          <div class="col">
-            <p class="mail-p" ><a href="mailto:marc_gen@hotmail.com"><img class="mail-icon" src="./images/mail.png" alt=""></a></p>
-          </div>
-          <div class="col">
-            <p class="tel"><a href="tel:14383762207"><img class="phone-icon" src="./graphiques-elements/carre-cell-phone.svg" alt=""></a></p>
-          </div>
-        </div>
-        <div class="copyright">
-          <a class="raw-pixel" href="https://www.rawpixel.com/">Image by rawpixel.com</a> 
-          <p class="copy-right ">Copyright © 2023</p>
-        </div>
-
-      </div>
-      <div id="contact-anchor" class="contact"></div>
-  </div>
-  </body>
-  
- <!----------------- <div class="container  experience-container-footer">
-        <div class="footer">
-            <a class="raw-pixel" href="https://www.rawpixel.com/">Image by rawpixel.com</a> 
-            <p class="copy-right ">Copyright © 2023</p>
-        </div>
-
-    </div>------> 
- 
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script src="./js/accueil.js" ></script>
+    </div><!----#app  -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/VueComponentExterne.js" type="module"></script>
+    <script src="./js/app.js" type="module"></script>
+    <script src="./js-design/animation.js" ></script>
+</body>
 </html>

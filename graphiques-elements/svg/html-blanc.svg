@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.78 30.66">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <path id="Icon_zocial-html5" data-name="Icon zocial-html5" class="cls-1" d="M0,6.01H21.78l-2.06,22.13-8.85,2.52-8.85-2.52L0,6.01Zm2.03-1.87V0h1.4V1.37h1.25V0h1.37V4.14h-1.37v-1.37h-1.25v1.37h-1.4Zm2.03,6.39l.75,8.29,.03-.06H14.18l-.31,3.52-2.99,.84-3.02-.87-.19-2.12h-2.74l.37,4.24,5.58,1.59,5.58-1.59,.78-8.32H7.29l-.25-2.77h10.44l.25-2.74H4.05ZM6.67,1.4V0h3.8V1.4h-1.21v2.74h-1.37V1.4h-1.22Zm4.39,2.74V0h1.46l.84,1.43,.87-1.43h1.46V4.14h-1.34V2.03l-1,1.56v-.03l-.94-1.46v2.06h-1.37Zm5.36,0V0h1.37V2.74h1.93v1.4h-3.3Z"/>
+  </g>
+</svg>

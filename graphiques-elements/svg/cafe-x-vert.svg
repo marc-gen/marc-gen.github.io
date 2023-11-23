@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.3 71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #708463;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <g id="Calque_2-2" data-name="Calque 2">
+    <g id="Calque_1-2" data-name="Calque 1-2">
+      <g>
+        <path id="Tracé_42" data-name="Tracé 42" class="cls-1" d="M55.3,25.6h3.3c7.29,0,13.2,5.91,13.2,13.2s-5.91,13.2-13.2,13.2h-3.3"/>
+        <path id="Tracé_43" data-name="Tracé 43" class="cls-1" d="M2.5,25.6H55.3v29.7c0,7.29-5.91,13.2-13.2,13.2H15.7c-7.29,0-13.2-5.91-13.2-13.2q0-4.86,0,0V25.6Z"/>
+        <path id="Tracé_44" data-name="Tracé 44" class="cls-1" d="M15.7,2.5V12.4"/>
+        <path id="Tracé_45" data-name="Tracé 45" class="cls-1" d="M28.9,2.5V12.4"/>
+        <path id="Tracé_46" data-name="Tracé 46" class="cls-1" d="M42.1,2.5V12.4"/>
+      </g>
+    </g>
+    <line class="cls-1" x1="15.68" y1="59.7" x2="42.12" y2="33.31"/>
+    <line class="cls-1" x1="15.7" y1="33.29" x2="42.1" y2="59.72"/>
+  </g>
+</svg>

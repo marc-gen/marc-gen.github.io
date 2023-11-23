@@ -16,7 +16,7 @@
     <header id="ma_navigation">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html"><img  class="logo" src="../images/logo-marc.svg" alt=""></a>
+          <a class="navbar-brand" href="../index.html"><img  class="logo" src="../graphiques-elements/svg/logo-vert.svg" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -24,15 +24,6 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link " aria-current="page" href="../index.html">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html#anchor-about">À propos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active-item" style="color:#000;" href="../projets.html">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html#contact-anchor">Contact</a>
               </li>
             </ul>
           </div>
@@ -44,6 +35,7 @@
           <div class="bouton-input">
             <input v-model="prochaine_ville" placeholder="Entrez une ville" />
             <button @click="re_render">Voir la météo</button>
+            <a href="../index.html"><button>Revenir au site</button></a>
           </div>
       </div>
         <meteocomponent :key="renderKey" :ma_ville="une_ville" />

@@ -1,0 +1,133 @@
+       <!--Contenu de  componentJeu : le jeu, les messages et les consoles des joueurs-->
+     <!--  numero des coups(id):   0 | 1 | 2
+                                   3 | 4 | 5
+                                   6 | 7 | 8    -->
+    <div class="jeu-conteneur-component">
+    <!---     Les messages      -->
+    <transition name="gagnant">
+        <h2 class="message-gagnant"  id="gagnant-x" v-show="joueur_gagnant == 'Joueur 1'" class="gagnant">Les "{{le_gagnant}}", Bravo!</h2>
+    </transition>
+    <transition name="gagnant">
+        <h2 class="message-gagnant" id="gagnant-o" v-show="joueur_gagnant == 'Joueur 2'" class="gagnant">Les "{{le_gagnant}}", Bravo!</h2>
+    </transition>
+    <transition name="gagnant">
+        <h2 v-show="partie_nul" id="partie_nul" class="gagnant">Partie Nul!</h2>
+    </transition>
+
+    <div class="conteneur-compte-jeu"> 
+ 
+        <!----------------------------------- LE JEU--------------------------------------------------->
+            <transition name="grille_reload">    
+            <div  class="conteneur-jeu" v-show="!joueur_gagnant && !partie_nul">
+                <!----------------------------  Première colonne ---------------------------->
+                    <div class="colonne">
+                                    
+                                    <!--------  coup 0 ----------->
+                        <div  @click="jouerCoup(0)"  class="border-bas-droit case">
+                            <transition name="coup">
+                                <div v-show="tableau_coup[0] == 0" >O</div>
+                            </transition>
+                            <transition name="coup">
+                                <div v-show="tableau_coup[0] == 1" >X</div>
+                            </transition>     
+                        </div>
+                                <!--------  coup 3 ----------->
+                        <div @click="jouerCoup(3)"  class="border-bas-droit case">
+                            <transition name="coup">
+                                <div v-show="tableau_coup[3] == 0" >O</div>
+                            </transition>   
+                            <transition name="coup">
+                                <div v-show="tableau_coup[3] == 1" >X</div>
+                            </transition>   
+                        </div>
+                                    <!--------  coup 6 ----------->
+                        <div @click="jouerCoup(6)"  class="border-right case">
+                            <transition name="coup">
+                                <div v-show="tableau_coup[6] == 0" >O</div>
+                            </transition>   
+                            <transition name="coup">
+                                <div v-show="tableau_coup[6] == 1" >X</div>
+                            </transition>   
+                        </div>
+                    </div>
+            
+                    <!----------------------------  Deuxième colonne ---------------------------->
+                    <div class="colonne">
+            
+                                    <!--------  coup 3 ----------->
+                        <div @click="jouerCoup(1)"  class="border-bas-droit case">
+                            <transition name="coup">
+                                <div v-show="tableau_coup[1] == 0" >O</div>
+                            </transition>   
+                            <transition name="coup">
+                                <div v-show="tableau_coup[1] == 1" >X</div>
+                            </transition>   
+                        </div>
+                                    <!--------  coup 4 ----------->
+                        <div @click="jouerCoup(4)"  class="border-bas-droit case">
+                            <transition name="coup">
+                                <div v-show="tableau_coup[4] == 0" >O</div>
+                            </transition>   
+                            <transition name="coup">
+                                <div v-show="tableau_coup[4] == 1" >X</div>
+                            </transition>   
+                        </div>
+                                    <!--------  coup 7 ----------->
+                        <div @click="jouerCoup(7)"  class="border-right case">
+                            <transition name="coup">
+                                <div v-show="tableau_coup[7] == 0" >O</div>
+                            </transition>   
+                            <transition name="coup">
+                                <div v-show="tableau_coup[7] == 1" >X</div>
+                            </transition>   
+                        </div>
+                    </div>
+            
+                    <!----------------------------  Troisième colonne ---------------------------->
+                    <div class="colonne">
+            
+                                    <!--------  coup 2 ----------->
+                        <div @click="jouerCoup(2)"  class="border-bas case">
+                            <transition name="coup">
+                                <div v-show="tableau_coup[2] == 0" >O</div>
+                            </transition>   
+                            <transition name="coup">
+                                <div v-show="tableau_coup[2] == 1" >X</div>
+                            </transition>   
+                        </div>
+                                    <!--------  coup 5 ----------->
+                        <div @click="jouerCoup(5)"  class="border-bas case">
+                            <transition name="coup">
+                                <div v-show="tableau_coup[5] == 0" >O</div>
+                            </transition>   
+                            <transition name="coup">
+                                <div v-show="tableau_coup[5] == 1" >X</div>
+                            </transition>   
+                        </div>
+                                    <!--------  coup 8 ----------->
+                        <div @click="jouerCoup(8)"  class="case-bas-droit case"> 
+                            <transition name="coup">
+                                <div v-show="tableau_coup[8] == 0" >O</div>
+                            </transition>   
+                            <transition name="coup">
+                                <div v-show="tableau_coup[8] == 1" >X</div>
+                            </transition>   
+                        </div>
+                    </div>
+                </div>
+        </transition>
+    </div>
+
+    <!---Indication du tour:  X ou O doit jouer (!!condition inverse de on doit analyser son coup)   -->
+    <p class="message_joueur" v-show = "joueur_actuel == 1">
+        Tour: <span>O</span>
+    </p>
+    <p class="message_joueur" v-show = "joueur_actuel == 0  || joueur_actuel == null">
+        Tour: <span>X</span>
+    <p>
+
+                <!-- Rejouer -->
+    <div @click="rejouer_partie" v-show="joueur_gagnant || partie_nul" class="bouton-play" id="replay">
+        Recommencer<span>!</span>
+    </div>     
+</div>

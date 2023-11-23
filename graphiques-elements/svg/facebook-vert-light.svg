@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.87 104.31">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d3decc;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <path id="Icon_awesome-facebook-f" data-name="Icon awesome-facebook-f" class="cls-1" d="M52.2,58.67l2.9-18.88h-18.11v-12.25c0-5.16,2.53-10.2,10.64-10.2h8.24V1.27c-4.84-.78-9.72-1.21-14.62-1.27-14.92,0-24.67,9.04-24.67,25.41v14.39H0v18.87H16.58v45.63h20.41V58.67h15.21Z"/>
+  </g>
+</svg>

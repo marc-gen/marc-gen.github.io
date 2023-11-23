@@ -1,0 +1,9 @@
+<div id="app-meteo">  <!-- application météo -->
+    <div class="conteneur-bouton">
+        <div class="bouton-input">
+          <input v-model="prochaine_ville" placeholder="Entrez une ville" />
+          <button @click="re_render">Voir la météo</button>
+        </div>
+    </div>
+      <infometeoComponent :key="renderKey" :ma_ville="une_ville" />
+  </div>

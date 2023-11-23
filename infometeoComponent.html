@@ -1,0 +1,26 @@
+<div class="weather">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    
+    <div class="conteneur-mini-meteo">
+        <div class="ville-temp">
+            <p><span class="ville"  >{{ma_ville}}</span></p>
+            <p class="degrees" > <strong class=" data-meteo-inactive" :class="{active: dataOk }">{{temp}}</strong>°C</p>
+        </div>
+    
+        <div class="info-ville">  
+                <div class="intro">
+                     <img :src="icon" :alt="description"> 
+                     <p class="description" > <strong class=" data-meteo-inactive" :class="{active: dataOk }" >{{description}}</strong> </p>          
+                </div>
+               
+          </div>
+    </div>
+
+
+
+
+
+  </div>

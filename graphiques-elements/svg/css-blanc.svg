@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.22 38.17">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: MyriadConceptRoman-Bold, 'Myriad Variable Concept';
+        font-size: 12px;
+        font-variation-settings: 'wght' 700, 'wdth' 100;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <g>
+      <path id="Icon_awesome-css3" data-name="Icon awesome-css3" class="cls-1" d="M29.22,10.9l-3.9,22.4-13.59,4.87L0,33.3l1.19-5.77H6.18l-.49,2.47,7.08,2.7,8.16-2.7,1.14-5.91H1.8l.97-4.99H23.08l.64-3.21H3.43l.99-4.99H29.22Z"/>
+      <text class="cls-2" transform="translate(6.13 10.04)"><tspan x="0" y="0">CSS</tspan></text>
+    </g>
+  </g>
+</svg>

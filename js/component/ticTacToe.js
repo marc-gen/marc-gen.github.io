@@ -1,14 +1,6 @@
-import './joueur1.js'
-import './joueur2.js'
-
-/****** Le Component Externe jeu c'est la grille de jeu et son fonctionnement  ***********/
-        /*   numero des coups(id):   0 | 1 | 2
-                                     3 | 4 | 5
-                                     6 | 7 | 8   */  
-
-Vue.componentExterne('ordi',{
+Vue.componentExterne('tictactoe',{
     data: function() {
-        return{                    /*  UTILITÉ DES VARIABLES */
+        return{                  
             joueur_gagnant: null,  // Pour afficher le joueur qui a gagné
             partie_nul: false,    // Vrai affiche Partie NULL
            
@@ -37,20 +29,11 @@ Vue.componentExterne('ordi',{
             compteur_index_coup: 0,
             coupOrdi:4,
             tourOrdi: false,
+  
         }
     },
-    // Notes changer les x et o pour un match null -> oublier lors du travaux
-    watch: {
-        compteur_coup_infini: function () {
-          // when the hash prop changes, this function will be fired.
-        /*  if(this.compteur_coup_infini %2 !== 0){
-            this.OrdiJouerCoup()
-          }*/
-        }
-     } ,
     methods: {
-
-        // ALTÉRATION POUR COMPUTER: MÉTHODE 1:VOIR MOUNTED  qui part au début de jeu, vois si c'est joueur 2, si oui 
+             // ALTÉRATION POUR COMPUTER: MÉTHODE 1:VOIR MOUNTED  qui part au début de jeu, vois si c'est joueur 2, si oui 
     //     joue aléatoirement sinon rien
     //    MÉTHODE 2 qui part après coup du joueur un et qui joue aléatoirement.
 
@@ -265,9 +248,6 @@ Vue.componentExterne('ordi',{
             }, "1000");
 
         },
-     
     },
-    template:'componentOrdi.html',
-
-    
+    template:'componentTictactoe.html'
 })

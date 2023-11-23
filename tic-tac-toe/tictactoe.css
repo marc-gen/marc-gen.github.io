@@ -109,12 +109,21 @@ width: 100%;
     transition: all 0.2s ease;
     cursor: pointer;
   }
+  #bouton-revenir{
+    margin-top: 93px;
+  }
+  #bouton-revenir a{
+    text-decoration: none;
+  }
   .bouton-2joueur  .bouton-play span {
     color: white;
   }
+  #lien-revenir-site{
+    text-decoration: none;
+  }
   #conteneur_accueil .bouton-play {
     font-family: 'Akaya Telivigala', cursive;
-    font-size: 40px;
+    font-size: 20px;
     width: 200px;
     text-align: center;
     border: 2px solid;
