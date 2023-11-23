@@ -433,6 +433,10 @@ body{
   width: 20px;
   height: 20px;
 }
+.face-link{
+  width: 20px!important;
+  height: 20px!important;
+}
 .icon-tools-media img:hover{
   opacity: 0.8;
 }
