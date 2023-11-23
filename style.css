@@ -70,11 +70,17 @@ body{
 .menu-scroll-bg{
   background-color: rgba(20,24,29,0.7)!important;
 }
+
+
+
+
+
 @media only screen and (min-width: 1150px) {
   .version-modal{
     display: none!important;
   }
 }
+
 
 @media only screen and (max-width: 1150px) {
   #mobile-intro{
@@ -416,7 +422,7 @@ body{
   flex-direction: column;
   justify-content: flex-end;
   position: fixed;
-  bottom: 22px
+  top: 21.2%
 }
 .zoneTictactoe:hover{
   border: 1px solid #708463;
@@ -1002,9 +1008,9 @@ div.presentation{
 }
 
 /*------------------MODAL----------------*/
-#journal-acces-modal-bd{
+/*#journal-acces-modal-bd{
   background-color: rgba(255,255,255,0.9);
-}
+}*/
 .modal-content{
   background-color: transparent;
   border: none;
@@ -1077,4 +1083,80 @@ div.presentation{
 .btn-close{
   border: none!important;
   --bs-btn-close-focus-shadow:none;
+}
+
+
+/*   grand écran   */
+@media only screen and (min-width: 1700px) {
+  .projet-details {
+    width: 85%;
+    font-size: 23px;
+  }
+  .projet-image-conteneur {
+    width: 520px;
+    height: 300px;
+  }
+  .projet-image {
+    width: 520px;
+    height: 300px;
+  }
+  .filter-projet-image {
+    width: 520px;
+    height: 300px;
+  }
+  .bg-projet-image-1 {
+    width: 520px;
+    height: 300px;
+    bottom: -11px;
+    right: 8px;
+  }
+  .bg-projet-image-3 {
+    width: 520px;
+    height: 300px;
+    bottom: -23px;
+    right: 23px;
+  }/*
+  .module-titre h1 {
+      font-size: 50px!important;
+  }
+  .module-titre h2 {
+    font-size: 44px!important;
+  }*/
+  .rectangular {
+    width: 40%!important;
+    height: 250px!important;
+  }
+  #titre-tictactoe {
+    top: 103px!important;
+    left: -31px!important;
+    font-size: 33px!important;
+    transform: rotate(289deg)!important;
+  }
+  .square-goutte {
+    width: 23%!important;
+    height: 250px!important;
+  }
+  .square {
+    width: 23%!important;
+    height: 250px!important;
+  }
+  .gauche .conteneur button.bouton-plus-meteo {
+    left: -8px!important;
+    bottom: 98px!important;
+  }
+  #app-meteo input {
+    height: 29px!important;
+    font-size: 19px!important;
+  }
+  .weather p {
+    font-size: 22px!important;
+  }
+  .aboutwhat{
+    font-size: 131px!important;
+  }
+  .xp {
+    width: 82px!important;
+    height: 82px!important;
+    font-size: 50px!important;
+  }
 }

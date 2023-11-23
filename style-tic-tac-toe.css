@@ -296,3 +296,12 @@
 .message_joueur{
   display: none;
 }
+
+
+@media only screen and (min-width: 1000px) {
+  .conteneur-jeu .case {
+    width: 67px;
+    height: 67px;
+    font-size: 37px;
+}
+}
