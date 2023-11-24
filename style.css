@@ -1088,6 +1088,9 @@ div.presentation{
 
 /*   grand écran   */
 @media only screen and (min-width: 1700px) {
+  .bouton-projet .bouton-voir-projet{
+    width: 139px;
+  }
   .display-start {
     width: 40%;
 }
